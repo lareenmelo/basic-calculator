@@ -10,11 +10,28 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var operationsTracker: UILabel!
+    @IBOutlet weak var result: UILabel!
+    @IBOutlet weak var clearContent: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
-
+    
+    @IBAction func performOperation(_ sender: Any) {
+        print("Missing: Perform Operation Implementation")
+        
+    }
+    
+    @IBAction func touchDigit(_ sender: Any) {
+        print("Missing: Touch Digit Implementation")
+    }
+    
+    @IBAction func clear(_ sender: Any) {
+        print("Missing: Clear Implementation")
+    }
+    
+    
 }
 
