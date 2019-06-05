@@ -11,10 +11,28 @@ import Foundation
 class Calculator {
     private var accumulator = 0.0
     
+    func setOperand(operand: Double) {
+        accumulator = operand
+    }
+    
     enum Operation {
         case Unary((Double) -> Double)
         case Binary((Double, Double) -> Double)
         case Equals
+    }
+    
+    private struct BinaryOperation {
+        var binaryFunction: (Double, Double) -> Double
+        var firstOperand: Double
+    }
+    
+    private var pending: BinaryOperation?
+    
+    func completeBinaryOperation() {
+        if pending != nil {
+            accumulator = pending?.binaryFunction(pending?.firstOperand ?? accumulator, accumulator) ?? accumulator
+            pending = nil
+        }
     }
     
     var operations: [String : Operation] = [
@@ -26,28 +44,34 @@ class Calculator {
         "+/-" : Operation.Unary({$0 * -1}),
         "=" : Operation.Equals
     ]
-    
+
     func performOperation(symbol: String) {
         if let operation = operations[symbol] {
             switch operation {
             case .Binary(let function):
-                print("HEAAAY")
+                completeBinaryOperation()
+                pending = BinaryOperation(binaryFunction: function, firstOperand: accumulator)
             case .Unary(let function):
                 accumulator = function(accumulator)
             case .Equals:
-                // TODO: perform the rest. 
-                print("WHERE MY PPL AT")
+                completeBinaryOperation()
             }
         }
     }
     
-    
-    
     func clear() {
-        // TODO: clear C
+        // TODO: test this
+         pending = nil
     }
     
     func clearHistory() {
-        // TODO: clear A/C
+         accumulator = 0
+         pending = nil
+    }
+    
+    var result: Double {
+        get {
+            return accumulator
+        }
     }
 }
