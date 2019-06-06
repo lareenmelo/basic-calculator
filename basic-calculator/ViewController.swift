@@ -20,8 +20,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        clearContent.titleLabel?.text = "C"
         // Do any additional setup after loading the view.
+        clearContent.titleLabel?.text = "C"
+
     }
     
     @IBAction func performOperation(_ sender: Any) {
