@@ -25,16 +25,20 @@ class ViewController: UIViewController {
     }
     
     @IBAction func performOperation(_ sender: Any) {
-        isTyping = false
         guard let operation = (sender as! UIButton).titleLabel else {
             return
         }
+        
         
         if operation.text != "=" {
             operationsTracker.text! += " \(operation.text!) "
         }
         
-        calculator.setOperand(operand: Double(number) ?? 0.0)
+        if isTyping {
+            calculator.setOperand(operand: Double(number) ?? 0.0)
+        }
+        
+        isTyping = false
         calculator.performOperation(symbol: operation.text!)
         
         resultLabel.text = String(calculator.result)
