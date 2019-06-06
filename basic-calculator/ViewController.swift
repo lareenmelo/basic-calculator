@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var operationsTracker: UILabel!
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var clearContent: UIButton!
@@ -22,7 +22,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         clearContent.titleLabel?.text = "C"
-
+        
     }
     
     @IBAction func performOperation(_ sender: Any) {
@@ -50,11 +50,11 @@ class ViewController: UIViewController {
             if buttonContent.text == "." {
                 operationsTracker.text = "0" + buttonContent.text!
                 number = "0" + buttonContent.text!
-
+                
             } else {
                 operationsTracker.text! += buttonContent.text!
                 number = buttonContent.text ?? "0"
-
+                
             }
             
             isTyping = true
@@ -70,12 +70,10 @@ class ViewController: UIViewController {
         // TODO: Missing clear and clear history logic implementation
         print("Missing: Clear Implementation")
         /* if button.content == c
-            undo last step
+         undo last step
          else
-            clear the life out of everything.
+         clear the life out of everything.
          */
     }
-    
-    
 }
 

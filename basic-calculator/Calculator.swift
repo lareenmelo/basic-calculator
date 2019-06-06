@@ -44,7 +44,7 @@ class Calculator {
         "+/-" : Operation.Unary({$0 * -1}),
         "=" : Operation.Equals
     ]
-
+    
     func performOperation(symbol: String) {
         if let operation = operations[symbol] {
             switch operation {
@@ -60,8 +60,8 @@ class Calculator {
     }
     
     func clearHistory() {
-         accumulator = 0
-         pending = nil
+        accumulator = 0
+        pending = nil
     }
     
     var result: Double {
