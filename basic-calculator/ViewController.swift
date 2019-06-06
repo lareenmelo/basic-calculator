@@ -21,7 +21,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        clearContent.titleLabel?.text = "C"
         
     }
     
@@ -60,9 +59,9 @@ class ViewController: UIViewController {
             isTyping = true
             
         } else {
-            
             operationsTracker.text = operationsTracker.text! + buttonContent.text!
             number += buttonContent.text!
+            
         }
     }
     
