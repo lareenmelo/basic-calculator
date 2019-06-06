@@ -59,11 +59,6 @@ class Calculator {
         }
     }
     
-    func clear() {
-        // TODO: test this
-         pending = nil
-    }
-    
     func clearHistory() {
          accumulator = 0
          pending = nil
