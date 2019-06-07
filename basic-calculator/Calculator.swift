@@ -6,6 +6,8 @@
 //  Copyright © 2019 Lareen Melo. All rights reserved.
 //
 
+
+// TODO: Show only the final result
 import Foundation
 
 class Calculator {
@@ -60,7 +62,7 @@ class Calculator {
     }
     
     func clearHistory() {
-        accumulator = 0
+        accumulator = 0.0
         pending = nil
     }
     

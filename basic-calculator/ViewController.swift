@@ -40,8 +40,10 @@ class ViewController: UIViewController {
         
         isTyping = false
         calculator.performOperation(symbol: operation.text!)
-        
+    
         resultLabel.text = String(calculator.result)
+
+    
     }
     
     @IBAction func touchDigit(_ sender: Any) {
@@ -70,13 +72,18 @@ class ViewController: UIViewController {
     }
     
     @IBAction func clear(_ sender: Any) {
-        // TODO: Missing clear and clear history logic implementation
-        print("Missing: Clear Implementation")
-        /* if button.content == c
-         undo last step
-         else
-         clear the life out of everything.
-         */
+        guard let buttonContent = (sender as! UIButton).titleLabel else {
+            return
+        }
+        
+        if buttonContent.text == "C" {
+            // TODO: Clear only current input
+        } else {
+            operationsTracker.text = ""
+            resultLabel.text = "0.0"
+            calculator.clearHistory()
+            isTyping = false
+        }
     }
 }
 
