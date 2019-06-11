@@ -12,6 +12,8 @@ import Foundation
 
 class Calculator {
     private var accumulator = 0.0
+    private var process: [Any] = []
+    
     
     func setOperand(operand: Double) {
         accumulator = operand
@@ -49,16 +51,26 @@ class Calculator {
     
     func performOperation(symbol: String) {
         if let operation = operations[symbol] {
+            
             switch operation {
             case .Binary(let function):
                 completeBinaryOperation()
                 pending = BinaryOperation(binaryFunction: function, firstOperand: accumulator)
+                
             case .Unary(let function):
                 accumulator = function(accumulator)
+                
             case .Equals:
                 completeBinaryOperation()
             }
         }
+    }
+    
+    func undo() {
+        if pending != nil {
+            pending = nil
+        }
+        
     }
     
     func clearHistory() {

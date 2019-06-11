@@ -9,6 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
+    // TODO: Operations stack to undo better 😉
     
     @IBOutlet weak var operationsTracker: UILabel!
     @IBOutlet weak var resultLabel: UILabel!
@@ -78,6 +79,7 @@ class ViewController: UIViewController {
         
         if buttonContent.text == "C" {
             // TODO: Clear only current input
+            
         } else {
             operationsTracker.text = ""
             resultLabel.text = "0.0"

@@ -23,7 +23,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="PET-WF-dWV"/>
                                 </constraints>
-                                <state key="normal" title="A/C"/>
+                                <state key="normal" title="C"/>
                                 <connections>
                                     <action selector="clear:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zx3-ei-0wZ"/>
                                 </connections>
