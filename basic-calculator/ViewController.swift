@@ -53,7 +53,7 @@ class ViewController: UIViewController {
         
         if !isTyping {
             if buttonContent.text == "." {
-                operationsTracker.text = "0" + buttonContent.text!
+                operationsTracker.text! += "0."
                 number = "0" + buttonContent.text!
                 
             } else {

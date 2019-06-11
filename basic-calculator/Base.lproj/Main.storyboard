@@ -81,7 +81,7 @@
                                 <rect key="frame" x="252" y="586" width="30" height="30"/>
                                 <state key="normal" title="."/>
                                 <connections>
-                                    <action selector="touchDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="J9I-f5-Gjg"/>
+                                    <action selector="touchDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vJP-Gf-xfu"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SZD-i1-HVF">
