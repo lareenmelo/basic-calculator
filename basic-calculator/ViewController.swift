@@ -32,6 +32,8 @@ class ViewController: UIViewController {
         
         if operation.text != "=" {
             operationsTracker.text! += " \(operation.text!) "
+        } else {
+            resultLabel.text = String(calculator.result)
         }
         
         if isTyping {
@@ -41,9 +43,6 @@ class ViewController: UIViewController {
         isTyping = false
         calculator.performOperation(symbol: operation.text!)
     
-        resultLabel.text = String(calculator.result)
-
-    
     }
     
     @IBAction func touchDigit(_ sender: Any) {
@@ -52,6 +51,7 @@ class ViewController: UIViewController {
         }
         
         if !isTyping {
+            
             if buttonContent.text == "." {
                 operationsTracker.text! += "0."
                 number = "0" + buttonContent.text!
