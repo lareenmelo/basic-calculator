@@ -79,6 +79,8 @@ class ViewController: UIViewController {
         
         if buttonContent.text == "C" {
             // TODO: Clear only current input
+            calculator.undo()
+            isTyping = false
             
         } else {
             operationsTracker.text = ""

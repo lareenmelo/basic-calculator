@@ -70,7 +70,6 @@ class Calculator {
         if pending != nil {
             pending = nil
         }
-        
     }
     
     func clearHistory() {
