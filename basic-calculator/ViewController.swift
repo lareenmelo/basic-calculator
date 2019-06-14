@@ -10,15 +10,13 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    // TODO: Operations stack to undo better 😉
-    // TODO: Start typing with result label, then push it to the operations tracker and such. 🤔
     @IBOutlet weak var operationsTracker: UILabel!
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var clearContent: UIButton!
     var number = ""
     var isTyping = false
-
     
+
     var calculator = Calculator()
     
     override func viewDidLoad() {
@@ -79,16 +77,14 @@ class ViewController: UIViewController {
         }
         
         if buttonContent.text == "C" {
-            
-            // TODO: if stackoperation.pop == #
-            // number = "0.0"
-            // else
-            
-        
-//            if !calculator.undo() {
-//                number = "0.0"
-//
-//            }
+            if isTyping {
+                operationsTracker.text = String((operationsTracker.text?.dropLast(number.count))!)
+                number = "0.0"
+                
+            } else {
+                calculator.undo()
+            }
+
             isTyping = false
             
         } else {
