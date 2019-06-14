@@ -9,13 +9,15 @@
 import UIKit
 
 class ViewController: UIViewController {
-    // TODO: Operations stack to undo better 😉
     
+    // TODO: Operations stack to undo better 😉
+    // TODO: Start typing with result label, then push it to the operations tracker and such. 🤔
     @IBOutlet weak var operationsTracker: UILabel!
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var clearContent: UIButton!
     var number = ""
     var isTyping = false
+
     
     var calculator = Calculator()
     
@@ -33,17 +35,16 @@ class ViewController: UIViewController {
         
         if operation.text != "=" {
             operationsTracker.text! += " \(operation.text!) "
-        } else {
-            resultLabel.text = String(calculator.result)
         }
         
         if isTyping {
             calculator.setOperand(operand: Double(number) ?? 0.0)
         }
         
-        isTyping = false
         calculator.performOperation(symbol: operation.text!)
-    
+        isTyping = false
+        
+        resultLabel.text = String(calculator.result)
     }
     
     @IBAction func touchDigit(_ sender: Any) {
@@ -78,8 +79,16 @@ class ViewController: UIViewController {
         }
         
         if buttonContent.text == "C" {
-            // TODO: Clear only current input
-            calculator.undo()
+            
+            // TODO: if stackoperation.pop == #
+            // number = "0.0"
+            // else
+            
+        
+//            if !calculator.undo() {
+//                number = "0.0"
+//
+//            }
             isTyping = false
             
         } else {

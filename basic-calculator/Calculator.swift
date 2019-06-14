@@ -56,6 +56,7 @@ class Calculator {
             case .Binary(let function):
                 completeBinaryOperation()
                 pending = BinaryOperation(binaryFunction: function, firstOperand: accumulator)
+                process.append(accumulator)
                 
             case .Unary(let function):
                 accumulator = function(accumulator)
