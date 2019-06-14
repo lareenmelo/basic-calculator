@@ -12,7 +12,6 @@ import Foundation
 
 class Calculator {
     private var accumulator = 0.0
-    private var process: [Any] = []
     
     
     func setOperand(operand: Double) {
@@ -56,7 +55,6 @@ class Calculator {
             case .Binary(let function):
                 completeBinaryOperation()
                 pending = BinaryOperation(binaryFunction: function, firstOperand: accumulator)
-                process.append(accumulator)
                 
             case .Unary(let function):
                 accumulator = function(accumulator)
