@@ -30,6 +30,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        resultLabel.text = "0"
         // Do any additional setup after loading the view.
         
     }
@@ -41,6 +42,10 @@ class ViewController: UIViewController {
         
         if isTyping {
             calculator.setOperand(operand: Double(number) ?? 0.0)
+        } else {
+            if operationsTracker.text == "" {
+                operationsTracker.text! += "0"
+            }
         }
         
         calculator.performOperation(symbol: operation.text!)
