@@ -39,11 +39,6 @@ class ViewController: UIViewController {
             return
         }
         
-        
-        if operation.text != "=" {
-            operationsTracker.text! += " \(operation.text!) "
-        }
-        
         if isTyping {
             calculator.setOperand(operand: Double(number) ?? 0.0)
         }
@@ -51,7 +46,12 @@ class ViewController: UIViewController {
         calculator.performOperation(symbol: operation.text!)
         isTyping = false
         
-        resultLabel.text = String(calculator.result)
+        if operation.text != "=" {
+            operationsTracker.text! += " \(operation.text!) "
+            
+        } else {
+            resultLabel.text = String(calculator.result)
+        }
     }
     
     @IBAction func touchDigit(_ sender: Any) {
@@ -80,7 +80,6 @@ class ViewController: UIViewController {
         } else {
             operationsTracker.text = operationsTracker.text! + buttonContent.text!
             number += buttonContent.text!
-            
         }
     }
     
