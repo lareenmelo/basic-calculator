@@ -12,9 +12,18 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var operationsTracker: UILabel!
     @IBOutlet weak var resultLabel: UILabel!
-    @IBOutlet weak var clearContent: UIButton!
+    @IBOutlet weak var clear: UIButton!
     var number = ""
     var isTyping = false
+    var isClearAll: Bool = true {
+        didSet{
+            if !isClearAll {
+                clear.setTitle("C", for: .normal)
+            } else {
+                clear.setTitle("AC", for: .normal)
+            }
+        }
+    }
     
 
     var calculator = Calculator()
@@ -46,6 +55,10 @@ class ViewController: UIViewController {
     }
     
     @IBAction func touchDigit(_ sender: Any) {
+        if isClearAll {
+            isClearAll = false
+        }
+        
         guard let buttonContent = (sender as! UIButton).titleLabel else {
             return
         }
@@ -75,18 +88,18 @@ class ViewController: UIViewController {
         guard let buttonContent = (sender as! UIButton).titleLabel else {
             return
         }
-        
+
         if buttonContent.text == "C" {
             if isTyping {
                 operationsTracker.text = String((operationsTracker.text?.dropLast(number.count))!)
                 number = "0.0"
-                
+
             } else {
                 calculator.undo()
             }
-
+            isClearAll.toggle()
             isTyping = false
-            
+
         } else {
             operationsTracker.text = ""
             resultLabel.text = "0.0"
