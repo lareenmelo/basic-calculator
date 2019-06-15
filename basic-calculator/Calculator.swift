@@ -7,7 +7,6 @@
 //
 
 
-// TODO: Show only the final result
 import Foundation
 
 class Calculator {
