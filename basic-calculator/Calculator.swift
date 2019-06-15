@@ -43,7 +43,7 @@ class Calculator {
         "÷" : Operation.Binary({$0 / $1}),
         "x" : Operation.Binary({$0 * $1}),
         "%" : Operation.Binary({$0.truncatingRemainder(dividingBy: $1)}),
-        "+/-" : Operation.Unary({$0 * -1}),
+        "+/-" : Operation.Unary({-$0}),
         "=" : Operation.Equals
     ]
     
