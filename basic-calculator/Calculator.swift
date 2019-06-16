@@ -56,7 +56,12 @@ class Calculator {
                 pending = BinaryOperation(binaryFunction: function, firstOperand: accumulator)
                 
             case .Unary(let function):
-                accumulator = function(accumulator)
+                if accumulator == 0.0 && symbol == "+/-" {
+                    print("performOperation: operation cannot be calculated")
+                } else {
+                    accumulator = function(accumulator)
+                    
+                }
                 
             case .Equals:
                 completeBinaryOperation()
