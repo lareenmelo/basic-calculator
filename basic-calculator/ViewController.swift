@@ -13,6 +13,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var operationsTracker: UILabel!
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var clear: UIButton!
+    @IBOutlet weak var operationsScroller: UIScrollView!
+    
+    
     var number = ""
     var isTyping = false
     var isClearAll: Bool = true {
@@ -31,6 +34,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         resultLabel.text = "0"
+        operationsTracker.sizeToFit()
         // Do any additional setup after loading the view.
         
     }
