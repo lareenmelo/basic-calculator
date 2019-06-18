@@ -59,7 +59,7 @@ class ViewController: UIViewController {
             operationsTracker.text! += " \(operation.text!) "
             
         } else {
-            resultLabel.text = String(calculator.result)
+            resultLabel.text = calculator.result
         }
     }
     

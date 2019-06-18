@@ -80,9 +80,29 @@ class Calculator {
         pending = nil
     }
     
-    var result: Double {
+    func evaluateWholesomeness(number: Double) -> Bool {
+        let ceilAccumulator = number
+        let floorAccumulator = number
+
+        if ceilAccumulator.rounded(.up) == floorAccumulator.rounded(.down) {
+            print("HEEEY")
+            return true
+        } else {
+            print("WHERE MY PEOPLE AT")
+            return false
+        }
+
+    }
+    
+    // TODO: make it a #
+    var result: String {
         get {
-            return accumulator
+//            return accumulator
+            if evaluateWholesomeness(number: accumulator) {
+                return String(Int(accumulator))
+            } else {
+                return String(accumulator)
+            }
         }
     }
 }
