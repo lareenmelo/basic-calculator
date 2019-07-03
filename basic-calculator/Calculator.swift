@@ -85,24 +85,35 @@ class Calculator {
         let floorAccumulator = number
 
         if ceilAccumulator.rounded(.up) == floorAccumulator.rounded(.down) {
-            print("HEEEY")
             return true
         } else {
-            print("WHERE MY PEOPLE AT")
             return false
         }
 
     }
     
-    // TODO: make it a #
     var result: String {
         get {
-//            return accumulator
             if evaluateWholesomeness(number: accumulator) {
-                return String(Int(accumulator))
+                if let number = accumulator.toInt() {
+                    return String(number)
+                } else {
+                    return String(accumulator)
+                }
             } else {
                 return String(accumulator)
             }
+        }
+    }
+}
+
+
+extension Double {
+    func toInt() -> Int? {
+        if self >= Double(Int.min) && self <= Double(Int.max) {
+            return Int(self)
+        } else {
+            return nil
         }
     }
 }
