@@ -55,7 +55,7 @@ class ViewController: UIViewController {
         }
         
         calculator.performOperation(symbol: operation.text!)
-        isTyping = false
+        isTyping.toggle()
         
         if operation.text != "=" {
             operationsTracker.text! += " \(operation.text!) "
@@ -67,7 +67,7 @@ class ViewController: UIViewController {
     
     @IBAction func touchDigit(_ sender: Any) {
         if isClearAll {
-            isClearAll = false
+            isClearAll.toggle()
         }
         
         guard let buttonContent = (sender as! UIButton).titleLabel else {
@@ -86,7 +86,7 @@ class ViewController: UIViewController {
                 
             }
             
-            isTyping = true
+            isTyping.toggle()
             
         } else {
             operationsTracker.text = operationsTracker.text! + buttonContent.text!
@@ -108,13 +108,13 @@ class ViewController: UIViewController {
                 calculator.undo()
             }
             isClearAll.toggle()
-            isTyping = false
+            isTyping.toggle()
 
         } else {
             operationsTracker.text = ""
             resultLabel.text = "0.0"
             calculator.clearHistory()
-            isTyping = false
+            isTyping.toggle()
         }
     }
 }
