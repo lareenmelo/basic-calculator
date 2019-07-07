@@ -112,7 +112,7 @@ class ViewController: UIViewController {
 
         } else {
             operationsTracker.text = ""
-            resultLabel.text = "0.0"
+            resultLabel.text = "0"
             calculator.clearHistory()
             isTyping.toggle()
         }
