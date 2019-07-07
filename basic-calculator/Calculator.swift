@@ -98,7 +98,7 @@ class Calculator {
                 if let number = accumulator.toInt() {
                     return String(number)
                 } else {
-                    return String(accumulator)
+                    return String(accumulator.round(withPrecision: 8))
                 }
             } else {
                 return String(accumulator.round(withPrecision: 8))
