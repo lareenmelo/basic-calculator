@@ -92,11 +92,14 @@ class Calculator {
 
     }
     
-    // TODO: make it a #
     var result: String {
         get {
             if evaluateWholesomeness(number: accumulator) {
-                return String(Int(accumulator))
+                if let number = accumulator.toInt() {
+                    return String(number)
+                } else {
+                    return String(accumulator)
+                }
             } else {
                 return String(accumulator.round(withPrecision: 8))
             }
@@ -109,5 +112,13 @@ extension Double {
     func round(withPrecision precision: Int) -> Double {
         let divisor = pow(10.0, Double(precision))
         return (self * divisor).rounded() / divisor
+    }
+
+    func toInt() -> Int? {
+        if self >= Double(Int.min) && self <= Double(Int.max) {
+            return Int(self)
+        } else {
+            return nil
+        }
     }
 }
