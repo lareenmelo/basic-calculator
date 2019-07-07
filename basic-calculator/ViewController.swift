@@ -45,6 +45,8 @@ class ViewController: UIViewController {
         }
         
         if isTyping {
+            
+
             calculator.setOperand(operand: Double(number) ?? 0.0)
         } else {
             if operationsTracker.text == "" {

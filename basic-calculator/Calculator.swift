@@ -85,10 +85,8 @@ class Calculator {
         let floorAccumulator = number
 
         if ceilAccumulator.rounded(.up) == floorAccumulator.rounded(.down) {
-            print("HEEEY")
             return true
         } else {
-            print("WHERE MY PEOPLE AT")
             return false
         }
 
@@ -97,12 +95,19 @@ class Calculator {
     // TODO: make it a #
     var result: String {
         get {
-//            return accumulator
             if evaluateWholesomeness(number: accumulator) {
                 return String(Int(accumulator))
             } else {
-                return String(accumulator)
+                return String(accumulator.round(withPrecision: 8))
             }
         }
+    }
+}
+
+
+extension Double {
+    func round(withPrecision precision: Int) -> Double {
+        let divisor = pow(10.0, Double(precision))
+        return (self * divisor).rounded() / divisor
     }
 }

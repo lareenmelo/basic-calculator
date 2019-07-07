@@ -28,7 +28,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="398" height="80.666666666666671"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" semanticContentAttribute="forceRightToLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MH3-DW-0rX">
-                                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="81"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="80.666666666666671"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -145,9 +145,9 @@
                                             <action selector="performOperation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3xi-kO-hjV"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l6c-Md-OQn">
+                                    <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l6c-Md-OQn" userLabel="÷">
                                         <rect key="frame" x="306.66666666666669" y="0.0" width="99.333333333333314" height="114.66666666666667"/>
-                                        <state key="normal" title="/"/>
+                                        <state key="normal" title="÷"/>
                                         <connections>
                                             <action selector="performOperation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QmF-Vf-jA2"/>
                                         </connections>
