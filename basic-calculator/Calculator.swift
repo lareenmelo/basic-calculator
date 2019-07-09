@@ -84,12 +84,7 @@ class Calculator {
         let ceilAccumulator = number
         let floorAccumulator = number
 
-        if ceilAccumulator.rounded(.up) == floorAccumulator.rounded(.down) {
-            return true
-        } else {
-            return false
-        }
-
+        return ceilAccumulator.rounded(.up) == floorAccumulator.rounded(.down)
     }
     
     var result: String {
