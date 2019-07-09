@@ -6,6 +6,12 @@
 //  Copyright © 2019 Lareen Melo. All rights reserved.
 //
 
+
+// TODO - Stacks for operations + numbers
+/*
+ IDEA: have two stacks, push it and pop it wise and don't forget to constantly replace the label when pushing or popping
+       changes to the stack.
+ */
 import UIKit
 
 class ViewController: UIViewController {
