@@ -9,6 +9,7 @@
 
 // TODO - Stacks for operations + numbers
 /*
+ 
  IDEA: have two stacks, push it and pop it wise and don't forget to constantly replace the label when pushing or popping
        changes to the stack.
  */
@@ -24,6 +25,8 @@ class ViewController: UIViewController {
     
     var number = ""
     var isTyping = false
+    var calculator = Calculator()
+    var numbersStack: [Double] = []
     var isClearAll: Bool = true {
         didSet{
             if !isClearAll {
@@ -33,9 +36,6 @@ class ViewController: UIViewController {
             }
         }
     }
-    
-
-    var calculator = Calculator()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,8 +51,6 @@ class ViewController: UIViewController {
         }
         
         if isTyping {
-            
-
             calculator.setOperand(operand: Double(number) ?? 0.0)
         } else {
             if operationsTracker.text == "" {
@@ -61,39 +59,41 @@ class ViewController: UIViewController {
         }
         
         calculator.performOperation(symbol: operation.text!)
-        isTyping.toggle()
         
-        if operation.text != "=" {
+        if operation.text != "=" && isTyping {
             operationsTracker.text! += " \(operation.text!) "
             
         } else {
             resultLabel.text = calculator.result
         }
+        
+        isTyping = false
+
     }
     
     @IBAction func touchDigit(_ sender: Any) {
         if isClearAll {
             isClearAll.toggle()
         }
-        
+
         guard let buttonContent = (sender as! UIButton).titleLabel else {
             return
         }
-        
+
         if !isTyping {
-            
+
             if buttonContent.text == "." {
                 operationsTracker.text! += "0."
                 number = "0" + buttonContent.text!
-                
+
             } else {
                 operationsTracker.text! += buttonContent.text!
                 number = buttonContent.text ?? "0"
-                
+
             }
-            
+
             isTyping.toggle()
-            
+
         } else {
             operationsTracker.text = operationsTracker.text! + buttonContent.text!
             number += buttonContent.text!
