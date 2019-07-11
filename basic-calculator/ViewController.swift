@@ -21,7 +21,6 @@ class ViewController: UIViewController {
     var isTyping = false
     var operatorExists = false
     var finishedCalculating = false
-    var negativeNumberTupple = 0.0
     var calculator = Calculator()
     var isClearAll: Bool = true {
         didSet{
@@ -56,8 +55,6 @@ class ViewController: UIViewController {
         
         if isTyping {
             calculator.setOperand(operand: Double(number) ?? 0.0)
-            negativeNumberTupple = Double(number) ?? 0.0
-
         } else {
             if operationsTracker.text == "" {
                 operationsTracker.text! += "0"
@@ -83,18 +80,15 @@ class ViewController: UIViewController {
             }
             
         } else if operation.text == "+/-" {
-            if negativeNumberTupple < 0.0 {
-                negativeNumberTupple *= -1
-                operationsTracker.text = String((operationsTracker.text?.dropLast(number.count + 3))!)
-                let newText = "\(number)"
-                operationsTracker.text! += newText
-                
+            if Double(calculator.result) ?? 0.0 < 0.0 {
+                operationsTracker.text = String((operationsTracker.text?.dropLast(number.count))!)
+                operationsTracker.text! += ("(\(calculator.result))")
+
                 
             } else {
-                negativeNumberTupple *= -1
-                operationsTracker.text = String((operationsTracker.text?.dropLast(number.count))!)
-                let newText = "(-\(number))"
-                operationsTracker.text! += newText
+                operationsTracker.text = String((operationsTracker.text?.dropLast(number.count + 3))!)
+                operationsTracker.text! += calculator.result
+
 
             }
         } else {
