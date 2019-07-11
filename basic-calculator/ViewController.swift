@@ -20,6 +20,7 @@ class ViewController: UIViewController {
     var number = ""
     var isTyping = false
     var operatorExists = false
+    var finishedCalculating = false
     var calculator = Calculator()
     var isClearAll: Bool = true {
         didSet{
@@ -43,6 +44,12 @@ class ViewController: UIViewController {
         guard let operation = (sender as! UIButton).titleLabel else {
             return
         }
+        
+        if finishedCalculating {
+            operationsTracker.text = resultLabel.text!
+            finishedCalculating.toggle()
+        }
+        
         
         if isTyping {
             calculator.setOperand(operand: Double(number) ?? 0.0)
@@ -71,6 +78,7 @@ class ViewController: UIViewController {
             }
             
         } else {
+            finishedCalculating.toggle()
             resultLabel.text = calculator.result
             
         }
