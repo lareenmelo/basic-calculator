@@ -21,6 +21,7 @@ class ViewController: UIViewController {
     var isTyping = false
     var operatorExists = false
     var finishedCalculating = false
+    var negativeNumberTupple = 0.0
     var calculator = Calculator()
     var isClearAll: Bool = true {
         didSet{
@@ -55,6 +56,8 @@ class ViewController: UIViewController {
         
         if isTyping {
             calculator.setOperand(operand: Double(number) ?? 0.0)
+            negativeNumberTupple = Double(number) ?? 0.0
+
         } else {
             if operationsTracker.text == "" {
                 operationsTracker.text! += "0"
@@ -63,7 +66,7 @@ class ViewController: UIViewController {
         
         calculator.performOperation(symbol: operation.text!)
         
-        if operation.text != "=" {
+        if operation.text != "=" && operation.text != "+/-" {
             if operatorExists {
                 operationsTracker.text! += "\(number) \(operation.text!) "
                 print("Operator already exists")
@@ -79,6 +82,21 @@ class ViewController: UIViewController {
                 }
             }
             
+        } else if operation.text == "+/-" {
+            if negativeNumberTupple < 0.0 {
+                negativeNumberTupple *= -1
+                operationsTracker.text = String((operationsTracker.text?.dropLast(number.count + 3))!)
+                let newText = "\(number)"
+                operationsTracker.text! += newText
+                
+                
+            } else {
+                negativeNumberTupple *= -1
+                operationsTracker.text = String((operationsTracker.text?.dropLast(number.count))!)
+                let newText = "(-\(number))"
+                operationsTracker.text! += newText
+
+            }
         } else {
             finishedCalculating.toggle()
             resultLabel.text = calculator.result
@@ -91,7 +109,7 @@ class ViewController: UIViewController {
     
     @IBAction func touchDigit(_ sender: Any) {
         operatorExists = false
-        
+
         if isClearAll {
             isClearAll.toggle()
         }
