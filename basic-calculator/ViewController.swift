@@ -160,7 +160,7 @@ class ViewController: UIViewController {
             }
             isClearAll.toggle()
             isTyping.toggle()
-            operatorExists = false
+//            operatorExists = false
             
             
             
@@ -169,9 +169,11 @@ class ViewController: UIViewController {
             resultLabel.text = "0"
             calculator.clearHistory()
             isTyping.toggle()
-            operatorExists = false
+            number = ""
             finishedCalculating = false
-            negativeNumberEvaluator = false
+
+//            operatorExists = false
+//            negativeNumberEvaluator = false
             
         }
     }
