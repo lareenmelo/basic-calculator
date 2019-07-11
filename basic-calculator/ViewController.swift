@@ -54,14 +54,16 @@ class ViewController: UIViewController {
         
         calculator.performOperation(symbol: operation.text!)
         
-        if (operation.text != "=") {
-            // TODO: Make it as 25 +++++ gives such result, like, make it possible
+        if operation.text != "=" {
             if operatorExists {
+                operationsTracker.text! += "\(number) \(operation.text!) "
                 print("Operator already exists")
+
             } else {
                 operatorExists = true
                 if operation.text == "÷" {
                     operationsTracker.text! += " / "
+                    
                 } else {
                 
                     operationsTracker.text! += " \(operation.text!) "
