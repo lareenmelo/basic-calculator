@@ -83,7 +83,7 @@ class Calculator {
     func evaluateWholesomeness(number: Double) -> Bool {
         let ceilAccumulator = number
         let floorAccumulator = number
-
+        
         return ceilAccumulator.rounded(.up) == floorAccumulator.rounded(.down)
     }
     
@@ -108,7 +108,7 @@ extension Double {
         let divisor = pow(10.0, Double(precision))
         return (self * divisor).rounded() / divisor
     }
-
+    
     func toInt() -> Int? {
         if self >= Double(Int.min) && self <= Double(Int.max) {
             return Int(self)

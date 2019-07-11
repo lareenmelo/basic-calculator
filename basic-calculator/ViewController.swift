@@ -26,8 +26,10 @@ class ViewController: UIViewController {
         didSet{
             if !isClearAll {
                 clear.setTitle("C", for: .normal)
+                
             } else {
                 clear.setTitle("AC", for: .normal)
+                
             }
         }
     }
@@ -65,15 +67,15 @@ class ViewController: UIViewController {
             if operatorExists {
                 operationsTracker.text! += "\(number) \(operation.text!) "
                 print("Operator already exists")
-
+                
             } else {
                 operatorExists = true
                 if operation.text == "÷" {
                     operationsTracker.text! += " / "
                     
                 } else {
-                
                     operationsTracker.text! += " \(operation.text!) "
+                    
                 }
             }
             
@@ -84,7 +86,7 @@ class ViewController: UIViewController {
         }
         
         isTyping = false
-
+        
     }
     
     @IBAction func touchDigit(_ sender: Any) {
@@ -93,25 +95,25 @@ class ViewController: UIViewController {
         if isClearAll {
             isClearAll.toggle()
         }
-
+        
         guard let buttonContent = (sender as! UIButton).titleLabel else {
             return
         }
-
+        
         if !isTyping {
-
+            
             if buttonContent.text == "." {
                 operationsTracker.text! += "0."
                 number = "0" + buttonContent.text!
-
+                
             } else {
                 operationsTracker.text! += buttonContent.text!
                 number = buttonContent.text ?? "0"
-
+                
             }
-
+            
             isTyping.toggle()
-
+            
         } else {
             operationsTracker.text = operationsTracker.text! + buttonContent.text!
             number += buttonContent.text!
@@ -122,28 +124,28 @@ class ViewController: UIViewController {
         guard let buttonContent = (sender as! UIButton).titleLabel else {
             return
         }
-
+        
         if buttonContent.text == "C" {
             if isTyping {
                 operationsTracker.text = String((operationsTracker.text?.dropLast(number.count))!)
                 number = "0.0"
-
+                
             } else {
                 calculator.undo()
             }
             isClearAll.toggle()
             isTyping.toggle()
             operatorExists = false
-
-
-
+            
+            
+            
         } else {
             operationsTracker.text = ""
             resultLabel.text = "0"
             calculator.clearHistory()
             isTyping.toggle()
             operatorExists = false
-
+            
         }
     }
 }
