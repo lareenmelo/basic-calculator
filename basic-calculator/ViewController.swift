@@ -7,12 +7,6 @@
 //
 
 
-// TODO - Stacks for operations + numbers
-/*
- 
- IDEA: have two stacks, push it and pop it wise and don't forget to constantly replace the label when pushing or popping
-       changes to the stack.
- */
 import UIKit
 
 class ViewController: UIViewController {
@@ -25,8 +19,8 @@ class ViewController: UIViewController {
     
     var number = ""
     var isTyping = false
+    var operatorExists = false
     var calculator = Calculator()
-    var numbersStack: [Double] = []
     var isClearAll: Bool = true {
         didSet{
             if !isClearAll {
@@ -60,11 +54,23 @@ class ViewController: UIViewController {
         
         calculator.performOperation(symbol: operation.text!)
         
-        if operation.text != "=" && isTyping {
-            operationsTracker.text! += " \(operation.text!) "
+        if (operation.text != "=") {
+            // TODO: Make it as 25 +++++ gives such result, like, make it possible
+            if operatorExists {
+                print("Operator already exists")
+            } else {
+                operatorExists = true
+                if operation.text == "÷" {
+                    operationsTracker.text! += " / "
+                } else {
+                
+                    operationsTracker.text! += " \(operation.text!) "
+                }
+            }
             
         } else {
             resultLabel.text = calculator.result
+            
         }
         
         isTyping = false
@@ -72,6 +78,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func touchDigit(_ sender: Any) {
+        operatorExists = false
+        
         if isClearAll {
             isClearAll.toggle()
         }
@@ -115,12 +123,17 @@ class ViewController: UIViewController {
             }
             isClearAll.toggle()
             isTyping.toggle()
+            operatorExists = false
+
+
 
         } else {
             operationsTracker.text = ""
             resultLabel.text = "0"
             calculator.clearHistory()
             isTyping.toggle()
+            operatorExists = false
+
         }
     }
 }
