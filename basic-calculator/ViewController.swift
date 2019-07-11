@@ -21,6 +21,7 @@ class ViewController: UIViewController {
     var isTyping = false
     var operatorExists = false
     var finishedCalculating = false
+    var negativeNumberEvaluator = false
     var calculator = Calculator()
     var isClearAll: Bool = true {
         didSet{
@@ -55,6 +56,7 @@ class ViewController: UIViewController {
         
         if isTyping {
             calculator.setOperand(operand: Double(number) ?? 0.0)
+            negativeNumberEvaluator.toggle()
         } else {
             if operationsTracker.text == "" {
                 operationsTracker.text! += "0"
@@ -80,30 +82,35 @@ class ViewController: UIViewController {
             }
             
         } else if operation.text == "+/-" {
-            if Double(calculator.result) ?? 0.0 < 0.0 {
-                operationsTracker.text = String((operationsTracker.text?.dropLast(number.count))!)
-                operationsTracker.text! += ("(\(calculator.result))")
-
+            if negativeNumberEvaluator {
+                if Double(calculator.result) ?? 0.0 < 0.0 {
+                    operationsTracker.text = String((operationsTracker.text?.dropLast(calculator.result.count - 1 ))!)
+                    operationsTracker.text! += ("(\(calculator.result))")
+                    
+                    
+                } else {
+                    operationsTracker.text = String((operationsTracker.text?.dropLast(calculator.result.count + 2))!)
+                    operationsTracker.text! += calculator.result
+                    
+                }
                 
             } else {
-                operationsTracker.text = String((operationsTracker.text?.dropLast(number.count + 3))!)
-                operationsTracker.text! += calculator.result
-
-
+                print("you can't do that tho")
             }
+            
         } else {
             finishedCalculating.toggle()
             resultLabel.text = calculator.result
             
         }
-        
+        negativeNumberEvaluator = false
         isTyping = false
         
     }
     
     @IBAction func touchDigit(_ sender: Any) {
         operatorExists = false
-
+        
         if isClearAll {
             isClearAll.toggle()
         }
