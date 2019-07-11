@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     
     
     var number = ""
+    var resultNumber = ""
     var isTyping = false
     var operatorExists = false
     var finishedCalculating = false
@@ -36,10 +37,10 @@ class ViewController: UIViewController {
     }
     
     override func viewDidLoad() {
+        // Do any additional setup after loading the view.
         super.viewDidLoad()
         resultLabel.text = "0"
         operationsTracker.sizeToFit()
-        // Do any additional setup after loading the view.
         
     }
     
@@ -49,7 +50,7 @@ class ViewController: UIViewController {
         }
         
         if finishedCalculating {
-            operationsTracker.text = resultLabel.text!
+            operationsTracker.text = resultNumber
             finishedCalculating.toggle()
         }
         
@@ -100,7 +101,12 @@ class ViewController: UIViewController {
             
         } else {
             finishedCalculating.toggle()
+            resultNumber = calculator.result
             resultLabel.text = calculator.result
+            
+            if !isClearAll {
+                isClearAll.toggle()
+            }
             
         }
         negativeNumberEvaluator = false
@@ -164,6 +170,8 @@ class ViewController: UIViewController {
             calculator.clearHistory()
             isTyping.toggle()
             operatorExists = false
+            finishedCalculating = false
+            negativeNumberEvaluator = false
             
         }
     }
