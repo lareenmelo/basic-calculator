@@ -58,6 +58,8 @@ class ViewController: UIViewController {
         if isTyping {
             calculator.setOperand(operand: Double(number) ?? 0.0)
             numberExists = true
+            operatorExists = false
+
         } else {
             if operationsTracker.text == "" {
                 operationsTracker.text! += "0"
@@ -124,7 +126,6 @@ class ViewController: UIViewController {
     }
     
     @IBAction func touchDigit(_ sender: Any) {
-        operatorExists = false
         
         if isClearAll {
             isClearAll.toggle()
@@ -171,10 +172,14 @@ class ViewController: UIViewController {
                 
             } else if isTyping && !negativeNumberEvaluator {
                 operationsTracker.text = String((operationsTracker.text?.dropLast(number.count))!)
-                number = "0.0"
+                if !operatorExists {
+                    number = "0.0"
+                }
+
                 
             } else  {
                 calculator.undo()
+                operatorExists = false
                 operationsTracker.text = String((operationsTracker.text?.dropLast(3))!)
             
             }
@@ -186,11 +191,12 @@ class ViewController: UIViewController {
             finishedCalculating = false
             resultLabel.text = ""
             calculator.clearHistory()
+            operatorExists = false
+
             
         }
         
         numberExists = false
-        operatorExists = false
         isTyping.toggle()
         
     }
