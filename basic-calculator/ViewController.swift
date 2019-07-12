@@ -19,10 +19,11 @@ class ViewController: UIViewController {
     
     var number = ""
     var resultNumber = ""
+    var negativeNumberEvaluator = false
     var isTyping = false
     var operatorExists = false
     var finishedCalculating = false
-    var negativeNumberEvaluator = false
+    var numberExists = false
     var calculator = Calculator()
     var isClearAll: Bool = true {
         didSet{
@@ -39,7 +40,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         // Do any additional setup after loading the view.
         super.viewDidLoad()
-        resultLabel.text = "0"
         operationsTracker.sizeToFit()
         
     }
@@ -57,7 +57,7 @@ class ViewController: UIViewController {
         
         if isTyping {
             calculator.setOperand(operand: Double(number) ?? 0.0)
-            negativeNumberEvaluator.toggle()
+            numberExists = true
         } else {
             if operationsTracker.text == "" {
                 operationsTracker.text! += "0"
@@ -67,6 +67,7 @@ class ViewController: UIViewController {
         calculator.performOperation(symbol: operation.text!)
         
         if operation.text != "=" && operation.text != "+/-" {
+            
             if operatorExists {
                 operationsTracker.text! += "\(number) \(operation.text!) "
                 print("Operator already exists")
@@ -81,16 +82,19 @@ class ViewController: UIViewController {
                     
                 }
             }
+            isTyping = false
+            
             
         } else if operation.text == "+/-" {
-            if negativeNumberEvaluator {
+            negativeNumberEvaluator = true
+            if numberExists {
                 if Double(calculator.result) ?? 0.0 < 0.0 {
                     operationsTracker.text = String((operationsTracker.text?.dropLast(calculator.result.count - 1 ))!)
                     operationsTracker.text! += ("(\(calculator.result))")
                     
                     
                 } else {
-                    operationsTracker.text = String((operationsTracker.text?.dropLast(calculator.result.count + 2))!)
+                    operationsTracker.text = String((operationsTracker.text?.dropLast(calculator.result.count + 3))!)
                     operationsTracker.text! += calculator.result
                     
                 }
@@ -100,6 +104,7 @@ class ViewController: UIViewController {
             }
             
         } else {
+            negativeNumberEvaluator.toggle()
             finishedCalculating.toggle()
             resultNumber = calculator.result
             resultLabel.text = calculator.result
@@ -108,9 +113,12 @@ class ViewController: UIViewController {
                 isClearAll.toggle()
             }
             
+            isTyping = false
+            
+            
         }
-        negativeNumberEvaluator = false
-        isTyping = false
+        
+        numberExists.toggle()
         
     }
     
@@ -136,7 +144,6 @@ class ViewController: UIViewController {
                 number = buttonContent.text ?? "0"
                 
             }
-            
             isTyping.toggle()
             
         } else {
@@ -151,31 +158,40 @@ class ViewController: UIViewController {
         }
         
         if buttonContent.text == "C" {
-            if isTyping {
+            if isTyping && negativeNumberEvaluator {
+                if Double(calculator.result) ?? 0.0 < 0.0 {
+                    operationsTracker.text = String((operationsTracker.text?.dropLast(calculator.result.count + 3))!)
+                    
+                } else {
+                    operationsTracker.text = String((operationsTracker.text?.dropLast(calculator.result.count - 1 ))!)
+                    
+                }
+                number = "0.0"
+                
+            } else if isTyping && !negativeNumberEvaluator {
                 operationsTracker.text = String((operationsTracker.text?.dropLast(number.count))!)
                 number = "0.0"
                 
-            } else {
+            } else  {
                 calculator.undo()
+                operationsTracker.text = String((operationsTracker.text?.dropLast(3))!)
+            
             }
             isClearAll.toggle()
-            isTyping.toggle()
-//            operatorExists = false
-            
-            
             
         } else {
-            operationsTracker.text = ""
-            resultLabel.text = "0"
-            calculator.clearHistory()
-            isTyping.toggle()
             number = ""
+            operationsTracker.text = ""
             finishedCalculating = false
-
-//            operatorExists = false
-//            negativeNumberEvaluator = false
+            resultLabel.text = ""
+            calculator.clearHistory()
             
         }
+        
+        numberExists = false
+        operatorExists = false
+        isTyping.toggle()
+        
     }
 }
 
