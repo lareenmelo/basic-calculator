@@ -69,6 +69,7 @@ class ViewController: UIViewController {
         if operation.text != "=" && operation.text != "+/-" {
             
             if operatorExists {
+                calculator.setOperand(operand: Double(number) ?? 0.0)
                 operationsTracker.text! += "\(number) \(operation.text!) "
                 print("Operator already exists")
                 
