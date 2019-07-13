@@ -54,12 +54,11 @@ class ViewController: UIViewController {
             finishedCalculating.toggle()
         }
         
-        
         if isTyping {
             calculator.setOperand(operand: Double(number) ?? 0.0)
             numberExists = true
             operatorExists = false
-
+            
         } else {
             if operationsTracker.text == "" {
                 operationsTracker.text! += "0"
@@ -69,11 +68,9 @@ class ViewController: UIViewController {
         calculator.performOperation(symbol: operation.text!)
         
         if operation.text != "=" && operation.text != "+/-" {
-            
             if operatorExists {
                 calculator.setOperand(operand: Double(number) ?? 0.0)
                 operationsTracker.text! += "\(number) \(operation.text!) "
-                print("Operator already exists")
                 
             } else {
                 operatorExists = true
@@ -87,7 +84,6 @@ class ViewController: UIViewController {
             }
             isTyping = false
             
-            
         } else if operation.text == "+/-" {
             negativeNumberEvaluator = true
             if numberExists {
@@ -95,17 +91,14 @@ class ViewController: UIViewController {
                     operationsTracker.text = String((operationsTracker.text?.dropLast(calculator.result.count - 1 ))!)
                     operationsTracker.text! += ("(\(calculator.result))")
                     
-                    
                 } else {
                     operationsTracker.text = String((operationsTracker.text?.dropLast(calculator.result.count + 3))!)
                     operationsTracker.text! += calculator.result
                     
                 }
-                
             } else {
                 print("whatchadoin'huh?")
             }
-            
         } else {
             negativeNumberEvaluator.toggle()
             finishedCalculating.toggle()
@@ -118,15 +111,12 @@ class ViewController: UIViewController {
             
             isTyping = false
             
-            
         }
-        
         numberExists.toggle()
         
     }
     
     @IBAction func touchDigit(_ sender: Any) {
-        
         if isClearAll {
             isClearAll.toggle()
         }
@@ -136,7 +126,6 @@ class ViewController: UIViewController {
         }
         
         if !isTyping {
-            
             if buttonContent.text == "." {
                 operationsTracker.text! += "0."
                 number = "0" + buttonContent.text!
@@ -175,13 +164,12 @@ class ViewController: UIViewController {
                 if !operatorExists {
                     number = "0.0"
                 }
-
                 
             } else  {
                 calculator.undo()
                 operatorExists = false
                 operationsTracker.text = String((operationsTracker.text?.dropLast(3))!)
-            
+                
             }
             isClearAll.toggle()
             
@@ -192,7 +180,6 @@ class ViewController: UIViewController {
             resultLabel.text = ""
             calculator.clearHistory()
             operatorExists = false
-
             
         }
         
@@ -201,4 +188,3 @@ class ViewController: UIViewController {
         
     }
 }
-
