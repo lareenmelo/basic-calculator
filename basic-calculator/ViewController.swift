@@ -16,15 +16,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var clear: UIButton!
     @IBOutlet weak var operationsScroller: UIScrollView!
     
+    var calculator = Calculator()
     
     var number = ""
-    var resultNumber = ""
-    var negativeNumberEvaluator = false
     var isTyping = false
+    var numberExists = false
     var operatorExists = false
     var finishedCalculating = false
-    var numberExists = false
-    var calculator = Calculator()
+    var negativeNumberEvaluator = false
     var isClearAll: Bool = true {
         didSet{
             if !isClearAll {
@@ -50,7 +49,7 @@ class ViewController: UIViewController {
         }
         
         if finishedCalculating {
-            operationsTracker.text = resultNumber
+            operationsTracker.text = calculator.result
             finishedCalculating.toggle()
         }
         
@@ -106,7 +105,6 @@ class ViewController: UIViewController {
         } else {
             negativeNumberEvaluator.toggle()
             finishedCalculating.toggle()
-            resultNumber = calculator.result
             resultLabel.text = calculator.result
             
             if !isClearAll {
