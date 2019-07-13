@@ -68,8 +68,8 @@ class ViewController: UIViewController {
         calculator.performOperation(symbol: operation.text!)
         
         if operation.text != "=" && operation.text != "+/-" {
+            calculator.setOperand(operand: Double(number) ?? 0.0)
             if operatorExists {
-                calculator.setOperand(operand: Double(number) ?? 0.0)
                 operationsTracker.text! += "\(number) \(operation.text!) "
                 
             } else {
@@ -96,9 +96,13 @@ class ViewController: UIViewController {
                     operationsTracker.text! += calculator.result
                     
                 }
+                
+                number = calculator.result
+                
             } else {
-                print("whatchadoin'huh?")
+                print("You have to type a number first to perform this operation.")
             }
+
         } else {
             negativeNumberEvaluator.toggle()
             finishedCalculating.toggle()
