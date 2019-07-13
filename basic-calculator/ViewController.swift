@@ -87,7 +87,7 @@ class ViewController: UIViewController {
             negativeNumberEvaluator = true
             if numberExists {
                 if Double(calculator.result) ?? 0.0 < 0.0 {
-                    operationsTracker.text = String((operationsTracker.text?.dropLast(calculator.result.count - 1 ))!)
+                    operationsTracker.text = String((operationsTracker.text?.dropLast(calculator.result.count - 1))!)
                     operationsTracker.text! += ("(\(calculator.result))")
                     
                 } else {
@@ -101,7 +101,7 @@ class ViewController: UIViewController {
             } else {
                 print("You have to type a number first to perform this operation.")
             }
-
+            
         } else {
             negativeNumberEvaluator.toggle()
             finishedCalculating.toggle()
@@ -156,7 +156,7 @@ class ViewController: UIViewController {
                     operationsTracker.text = String((operationsTracker.text?.dropLast(calculator.result.count + 3))!)
                     
                 } else {
-                    operationsTracker.text = String((operationsTracker.text?.dropLast(calculator.result.count - 1 ))!)
+                    operationsTracker.text = String((operationsTracker.text?.dropLast(calculator.result.count))!)
                     
                 }
                 number = "0.0"
