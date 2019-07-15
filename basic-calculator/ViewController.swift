@@ -68,12 +68,12 @@ class ViewController: UIViewController {
         
         if operation.text != "=" && operation.text != "+/-" {
             calculator.setOperand(operand: Double(number) ?? 0.0)
-
+            
             if operatorExists {
                 operationsTracker.text! += "\(number) \(operation.text!) "
                 
             } else {
-
+                
                 operatorExists = true
                 if operation.text == "÷" {
                     operationsTracker.text! += " / "
@@ -166,10 +166,12 @@ class ViewController: UIViewController {
                 
             } else if isTyping && !negativeNumberEvaluator {
                 operationsTracker.text = String((operationsTracker.text?.dropLast(number.count))!)
-
-                if !operatorExists {
-                    number = "0"
-                }
+                
+                number = "0"
+                
+                //                if !operatorExists {
+                //                    number = "0"
+                //                }
                 
             } else  {
                 calculator.undo()
