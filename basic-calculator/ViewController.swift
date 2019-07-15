@@ -68,9 +68,11 @@ class ViewController: UIViewController {
         
         if operation.text != "=" && operation.text != "+/-" {
             calculator.setOperand(operand: Double(number) ?? 0.0)
+
             
             if operatorExists {
                 operationsTracker.text! += "\(number) \(operation.text!) "
+
                 
             } else {
                 
@@ -163,6 +165,7 @@ class ViewController: UIViewController {
                 }
                 
                 number = "0"
+
                 
             } else if isTyping && !negativeNumberEvaluator {
                 operationsTracker.text = String((operationsTracker.text?.dropLast(number.count))!)
@@ -172,7 +175,7 @@ class ViewController: UIViewController {
                 //                if !operatorExists {
                 //                    number = "0"
                 //                }
-                
+
             } else  {
                 calculator.undo()
                 operatorExists = false
@@ -187,11 +190,12 @@ class ViewController: UIViewController {
             resultLabel.text = ""
             calculator.clearHistory()
             operatorExists = false
+            isTyping = false
+
             
         }
         
         numberExists = false
-        isTyping = false
         
     }
 }
