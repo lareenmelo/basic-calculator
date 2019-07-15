@@ -59,9 +59,19 @@ class ViewController: UIViewController {
             operatorExists = false
             
         } else {
-            if operationsTracker.text == "" {
-                operationsTracker.text! += "0"
+            if numberExists {
+                calculator.setOperand(operand: Double(number) ?? 0.0)
+                operationsTracker.text! += "\(number)"
+
+                operatorExists = false
+
+
+            } else {
+                if operationsTracker.text == "" {
+                    operationsTracker.text! += "0"
+                }
             }
+
         }
         
         calculator.performOperation(symbol: operation.text!)
@@ -118,7 +128,8 @@ class ViewController: UIViewController {
             isTyping = false
             
         }
-        numberExists.toggle()
+        numberExists = false
+
         
     }
     
@@ -171,18 +182,15 @@ class ViewController: UIViewController {
                 operationsTracker.text = String((operationsTracker.text?.dropLast(number.count))!)
                 
                 number = "0"
-                
-                //                if !operatorExists {
-                //                    number = "0"
-                //                }
 
             } else  {
                 calculator.undo()
                 operatorExists = false
                 operationsTracker.text = String((operationsTracker.text?.dropLast(3))!)
-                
             }
-            
+            isTyping = false
+            numberExists.toggle()
+
         } else {
             number = ""
             operationsTracker.text = ""
@@ -191,11 +199,13 @@ class ViewController: UIViewController {
             calculator.clearHistory()
             operatorExists = false
             isTyping = false
+          
+            numberExists = false
 
             
         }
+
         
-        numberExists = false
         
     }
 }
