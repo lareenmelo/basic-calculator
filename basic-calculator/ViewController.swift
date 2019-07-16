@@ -70,6 +70,8 @@ class ViewController: UIViewController {
                 if operationsTracker.text == "" {
                     operationsTracker.text! += "0"
                 }
+                
+
             }
 
         }
@@ -188,6 +190,13 @@ class ViewController: UIViewController {
                 operatorExists = false
                 operationsTracker.text = String((operationsTracker.text?.dropLast(3))!)
             }
+            
+            if operationsTracker.text == "" {
+                if !isClearAll {
+                    isClearAll.toggle()
+                }
+            }
+            
             isTyping = false
             numberExists.toggle()
 
