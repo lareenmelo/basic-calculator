@@ -24,21 +24,26 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="tms-9u-Yvb" userLabel="Scrollable Label">
                                         <rect key="frame" x="8" y="8" width="398" height="80.666666666666671"/>
                                         <subviews>
-                                            <scrollView autoresizesSubviews="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GB3-Hh-eXI">
+                                            <scrollView autoresizesSubviews="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GB3-Hh-eXI">
                                                 <rect key="frame" x="0.0" y="0.0" width="398" height="80.666666666666671"/>
                                                 <subviews>
-                                                    <label autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" semanticContentAttribute="forceLeftToRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MH3-DW-0rX">
-                                                        <rect key="frame" x="5" y="0.0" width="0.0" height="80.666666666666671"/>
+                                                    <label autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" semanticContentAttribute="forceLeftToRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MH3-DW-0rX">
+                                                        <rect key="frame" x="0.0" y="0.0" width="8" height="80.666666666666671"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="8" id="J5g-rB-4lw"/>
+                                                        </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstItem="MH3-DW-0rX" firstAttribute="leading" secondItem="GB3-Hh-eXI" secondAttribute="leading" constant="5" id="0hb-6j-RNl"/>
+                                                    <constraint firstItem="MH3-DW-0rX" firstAttribute="leading" secondItem="GB3-Hh-eXI" secondAttribute="leading" id="0hb-6j-RNl"/>
                                                     <constraint firstItem="MH3-DW-0rX" firstAttribute="centerY" secondItem="GB3-Hh-eXI" secondAttribute="centerY" id="0rR-gQ-zHz"/>
                                                     <constraint firstAttribute="bottom" secondItem="MH3-DW-0rX" secondAttribute="bottom" id="8ZG-GS-xj2"/>
+                                                    <constraint firstAttribute="trailing" secondItem="MH3-DW-0rX" secondAttribute="trailing" constant="393" id="LR2-jK-NaX"/>
                                                     <constraint firstItem="MH3-DW-0rX" firstAttribute="top" secondItem="GB3-Hh-eXI" secondAttribute="top" id="fFk-Z5-l8H"/>
+                                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="MH3-DW-0rX" secondAttribute="trailing" constant="20" symbolic="YES" id="npe-Tk-CYg"/>
                                                 </constraints>
                                             </scrollView>
                                         </subviews>
