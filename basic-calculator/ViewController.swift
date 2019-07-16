@@ -79,7 +79,7 @@ class ViewController: UIViewController {
         calculator.performOperation(symbol: operation.text!)
         
         if operation.text != "=" && operation.text != "+/-" {
-            calculator.setOperand(operand: Double(number) ?? 0.0)
+//            calculator.setOperand(operand: Double(number) ?? 0.0)
 
             
             if operatorExists {
@@ -121,7 +121,6 @@ class ViewController: UIViewController {
         } else {
             negativeNumberEvaluator.toggle()
             finishedCalculating.toggle()
-            resultLabel.text = calculator.result
             
             if !isClearAll {
                 isClearAll.toggle()
@@ -130,6 +129,9 @@ class ViewController: UIViewController {
             isTyping = false
             
         }
+        
+        resultLabel.text = calculator.result
+
         numberExists = false
 
         
