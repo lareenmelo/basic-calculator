@@ -144,6 +144,11 @@ class ViewController: UIViewController {
             return
         }
         
+        if finishedCalculating {
+            operationsTracker.text = ""
+            finishedCalculating.toggle()
+        }
+        
         if !isTyping {
             if buttonContent.text == "." {
                 operationsTracker.text! += "0."
