@@ -76,64 +76,59 @@ class ViewController: UIViewController {
 
         }
         
-        calculator.performOperation(symbol: operation.text!)
-        
-        if operation.text != "=" && operation.text != "+/-" {
-//            calculator.setOperand(operand: Double(number) ?? 0.0)
-
-            
-            if operatorExists {
-                operationsTracker.text! += "\(number) \(operation.text!) "
-
-                
-            } else {
-                
-                operatorExists = true
-                if operation.text == "÷" {
-                    operationsTracker.text! += " / "
-                    
-                } else {
-                    operationsTracker.text! += " \(operation.text!) "
-                    
-                }
-            }
-            isTyping = false
-            resultLabel.text = calculator.result
-
-            
-        } else if operation.text == "+/-" {
-            negativeNumberEvaluator = true
-            if numberExists {
-                if Double(calculator.result) ?? 0.0 < 0.0 {
-                    operationsTracker.text = String((operationsTracker.text?.dropLast(calculator.result.count - 1))!)
-                    operationsTracker.text! += ("(\(calculator.result))")
-                    
-                } else {
-                    operationsTracker.text = String((operationsTracker.text?.dropLast(calculator.result.count + 3))!)
-                    operationsTracker.text! += calculator.result
-                    
-                }
-                
-                number = calculator.result
-                
-            } else {
-                print("You have to type a number first to perform this operation.")
-            }
+        if operatorExists {
+            print("performOperation: cannot perform recursive operations.")
             
         } else {
-            negativeNumberEvaluator.toggle()
-            finishedCalculating.toggle()
+            calculator.performOperation(symbol: operation.text!)
+
+            operatorExists = true
             
-            if !isClearAll {
-                isClearAll.toggle()
+            if operation.text != "=" && operation.text != "+/-" {
+                if operation.text == "÷" {
+                    operationsTracker.text! += " / "
+
+                } else {
+                    operationsTracker.text! += " \(operation.text!) "
+
+                }
+                
+                isTyping = false
+                resultLabel.text = calculator.result
+                
+            } else if operation.text == "+/-" {
+                negativeNumberEvaluator = true
+                if numberExists {
+                    if Double(calculator.result) ?? 0.0 < 0.0 {
+                        operationsTracker.text = String((operationsTracker.text?.dropLast(calculator.result.count - 1))!)
+                        operationsTracker.text! += ("(\(calculator.result))")
+                        
+                    } else {
+                        operationsTracker.text = String((operationsTracker.text?.dropLast(calculator.result.count + 3))!)
+                        operationsTracker.text! += calculator.result
+                        
+                    }
+                    
+                    number = calculator.result
+                    
+                } else {
+                    print("You have to type a number first to perform this operation.")
+                }
+            } else {
+                
+                negativeNumberEvaluator.toggle()
+                finishedCalculating.toggle()
+                
+                if !isClearAll {
+                    isClearAll.toggle()
+                }
+                
+                isTyping = false
+                resultLabel.text = calculator.result
+            
             }
-            
-            isTyping = false
-            resultLabel.text = calculator.result
 
-            
         }
-
         numberExists = false
 
         
