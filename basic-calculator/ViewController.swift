@@ -98,6 +98,8 @@ class ViewController: UIViewController {
                 }
             }
             isTyping = false
+            resultLabel.text = calculator.result
+
             
         } else if operation.text == "+/-" {
             negativeNumberEvaluator = true
@@ -127,10 +129,10 @@ class ViewController: UIViewController {
             }
             
             isTyping = false
+            resultLabel.text = calculator.result
+
             
         }
-        
-        resultLabel.text = calculator.result
 
         numberExists = false
 
