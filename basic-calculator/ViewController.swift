@@ -108,7 +108,7 @@ class ViewController: UIViewController {
                 
                 negativeNumberEvaluator.toggle()
                 finishedCalculating.toggle()
-                
+               
                 if !isClearAll {
                     isClearAll.toggle()
                 }
@@ -205,11 +205,6 @@ class ViewController: UIViewController {
             isTyping = false
           
             numberExists = false
-
-            
         }
-
-        
-        
     }
 }
