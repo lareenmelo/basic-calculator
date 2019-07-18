@@ -59,22 +59,12 @@ class ViewController: UIViewController {
             operatorExists = false
             
         } else {
-            if numberExists {
-                calculator.setOperand(operand: Double(number) ?? 0.0)
-                operationsTracker.text! += "\(number)"
 
-                operatorExists = false
-
-
-            } else {
                 if operationsTracker.text == "" {
                     operationsTracker.text! += "0"
                 }
-                
-
-            }
-
         }
+        
         
         if operatorExists {
             print("performOperation: cannot perform recursive operations.")
@@ -174,7 +164,7 @@ class ViewController: UIViewController {
         if buttonContent.text == "C" {
             if isTyping && negativeNumberEvaluator {
                 if Double(calculator.result) ?? 0.0 < 0.0 {
-                    operationsTracker.text = String((operationsTracker.text?.dropLast(calculator.result.count + 3))!)
+                    operationsTracker.text = String((operationsTracker.text?.dropLast(calculator.result.count + 2))!)
                     
                 } else {
                     operationsTracker.text = String((operationsTracker.text?.dropLast(calculator.result.count))!)
