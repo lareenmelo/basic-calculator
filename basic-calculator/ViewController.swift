@@ -115,6 +115,7 @@ class ViewController: UIViewController {
                 
                 isTyping = false
                 resultLabel.text = calculator.result
+                operatorExists = false
             
             }
 
