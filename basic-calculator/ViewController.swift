@@ -44,7 +44,12 @@ class ViewController: UIViewController {
     }
     
     func evaluateScroller() {
-        operationsScroller.isScrollEnabled = operationsScroller.frame.size.width + 20 >= operationsScroller.frame.size.width
+        operationsScroller.isScrollEnabled = operationsTracker.frame.size.width + 30 >= operationsScroller.frame.size.width
+        
+        if operationsScroller.isScrollEnabled {
+            let rightOffSet = CGPoint(x: operationsTracker.frame.size.width - self.operationsScroller.frame.size.width + self.operationsScroller.contentInset.right, y: 0)
+            operationsScroller.setContentOffset(rightOffSet, animated: true)
+        }
     }
     
     @IBAction func performOperation(_ sender: Any) {
@@ -215,3 +220,4 @@ class ViewController: UIViewController {
                 evaluateScroller()
     }
 }
+
