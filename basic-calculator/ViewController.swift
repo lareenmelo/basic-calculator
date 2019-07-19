@@ -43,6 +43,10 @@ class ViewController: UIViewController {
         
     }
     
+    func evaluateScroller() {
+        operationsScroller.isScrollEnabled = operationsScroller.frame.size.width + 20 >= operationsScroller.frame.size.width
+    }
+    
     @IBAction func performOperation(_ sender: Any) {
         guard let operation = (sender as! UIButton).titleLabel else {
             return
@@ -121,8 +125,8 @@ class ViewController: UIViewController {
             
         }
         numberExists = false
-        
-        
+        evaluateScroller()
+
     }
     
     @IBAction func touchDigit(_ sender: Any) {
@@ -155,6 +159,8 @@ class ViewController: UIViewController {
             operationsTracker.text = operationsTracker.text! + buttonContent.text!
             number += buttonContent.text!
         }
+        evaluateScroller()
+
     }
     
     @IBAction func clear(_ sender: Any) {
@@ -206,5 +212,6 @@ class ViewController: UIViewController {
             
             numberExists = false
         }
+                evaluateScroller()
     }
 }
