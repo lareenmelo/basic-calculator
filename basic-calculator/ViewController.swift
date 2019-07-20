@@ -177,29 +177,17 @@ class ViewController: UIViewController {
         }
         
         if buttonContent.text == "C" {
-            if isTyping && negativeNumberEvaluator {
-                if Double(calculator.result) ?? 0.0 < 0.0 {
-                    operationsTracker.text = String((operationsTracker.text?.dropLast(calculator.result.count + 2))!)
-                    
-                } else {
-                    operationsTracker.text = String((operationsTracker.text?.dropLast(calculator.result.count))!)
-                    
-                }
-                
+            if isTyping {
+                operationsTracker.text = operationsTracker.text?.delete()
                 number = "0"
                 
-                
-            } else if isTyping && !negativeNumberEvaluator {
-                operationsTracker.text = String((operationsTracker.text?.dropLast(number.count))!)
-                
-                number = "0"
-                
-            } else  {
+            } else {
                 calculator.undo()
                 operatorExists = false
                 operationsTracker.text = String((operationsTracker.text?.dropLast(3))!)
+                
             }
-            
+
             if operationsTracker.text == "" {
                 if !isClearAll {
                     isClearAll.toggle()
@@ -225,3 +213,21 @@ class ViewController: UIViewController {
     }
 }
 
+extension String {
+    func delete() -> String {
+        let sequence = self
+        var lastWhitespaceIndex = 0
+        var offset = 0
+        for char in sequence {
+            if char == " " {
+                lastWhitespaceIndex = offset
+            }
+            offset += 1
+        }
+        
+        let index = sequence.index(sequence.startIndex, offsetBy: lastWhitespaceIndex)
+        
+        let newString = String(sequence[...index])
+        return newString
+    }
+}
