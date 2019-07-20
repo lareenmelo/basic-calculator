@@ -41,7 +41,7 @@
                                                     <constraint firstItem="MH3-DW-0rX" firstAttribute="leading" secondItem="GB3-Hh-eXI" secondAttribute="leading" id="0hb-6j-RNl"/>
                                                     <constraint firstItem="MH3-DW-0rX" firstAttribute="centerY" secondItem="GB3-Hh-eXI" secondAttribute="centerY" id="0rR-gQ-zHz"/>
                                                     <constraint firstAttribute="bottom" secondItem="MH3-DW-0rX" secondAttribute="bottom" id="8ZG-GS-xj2"/>
-                                                    <constraint firstAttribute="trailing" secondItem="MH3-DW-0rX" secondAttribute="trailing" constant="20" id="LR2-jK-NaX"/>
+                                                    <constraint firstAttribute="trailing" secondItem="MH3-DW-0rX" secondAttribute="trailing" constant="30" id="LR2-jK-NaX"/>
                                                     <constraint firstItem="MH3-DW-0rX" firstAttribute="top" secondItem="GB3-Hh-eXI" secondAttribute="top" id="fFk-Z5-l8H"/>
                                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="MH3-DW-0rX" secondAttribute="trailing" constant="20" symbolic="YES" id="npe-Tk-CYg"/>
                                                 </constraints>

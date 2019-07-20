@@ -47,8 +47,11 @@ class ViewController: UIViewController {
         operationsScroller.isScrollEnabled = operationsTracker.frame.size.width + 30 >= operationsScroller.frame.size.width
         
         if operationsScroller.isScrollEnabled {
-            let rightOffSet = CGPoint(x: operationsTracker.frame.size.width - self.operationsScroller.frame.size.width + self.operationsScroller.contentInset.right, y: 0)
+            let rightOffSet = CGPoint(x: operationsTracker.frame.size.width - operationsScroller.frame.size.width + self.operationsScroller.contentInset.right + 24, y: 0)
             operationsScroller.setContentOffset(rightOffSet, animated: true)
+        } else {
+            let originalOffset = CGPoint(x: 0, y: 0)
+            operationsScroller.setContentOffset(originalOffset, animated: true)
         }
     }
     
@@ -94,7 +97,7 @@ class ViewController: UIViewController {
                 
                 isTyping = false
                 resultLabel.text = calculator.result
-                
+
             } else if operation.text == "+/-" {
                 negativeNumberEvaluator = true
                 if numberExists {
@@ -109,7 +112,7 @@ class ViewController: UIViewController {
                     }
                     
                     number = calculator.result
-                    
+
                 } else {
                     print("You have to type a number first to perform this operation.")
                 }
@@ -129,9 +132,8 @@ class ViewController: UIViewController {
             }
             
         }
-        numberExists = false
         evaluateScroller()
-
+        numberExists = false
     }
     
     @IBAction func touchDigit(_ sender: Any) {
@@ -217,7 +219,8 @@ class ViewController: UIViewController {
             
             numberExists = false
         }
-                evaluateScroller()
+        
+        evaluateScroller()
     }
 }
 
