@@ -46,8 +46,8 @@ class ViewController: UIViewController {
     func evaluateScroller() {
         operationsScroller.isScrollEnabled = operationsTracker.frame.size.width + 30 >= operationsScroller.frame.size.width
         
-        if operationsScroller.isScrollEnabled {
-            let rightOffSet = CGPoint(x: operationsTracker.frame.size.width - operationsScroller.frame.size.width + self.operationsScroller.contentInset.right + 24, y: 0)
+        if operationsScroller.isScrollEnabled && !finishedCalculating {
+            let rightOffSet = CGPoint(x: operationsTracker.frame.size.width - operationsScroller.frame.size.width + 24, y: 0)
             operationsScroller.setContentOffset(rightOffSet, animated: true)
         } else {
             let originalOffset = CGPoint(x: 0, y: 0)
@@ -63,6 +63,7 @@ class ViewController: UIViewController {
         if finishedCalculating {
             operationsTracker.text = calculator.result
             finishedCalculating.toggle()
+
         }
         
         if isTyping {
@@ -74,7 +75,9 @@ class ViewController: UIViewController {
             
             if operationsTracker.text == "" {
                 operationsTracker.text! += "0"
+                
             }
+            
         }
         
         
@@ -116,6 +119,7 @@ class ViewController: UIViewController {
                 } else {
                     print("You have to type a number first to perform this operation.")
                 }
+
             } else {
                 
                 negativeNumberEvaluator.toggle()
@@ -128,11 +132,8 @@ class ViewController: UIViewController {
                 isTyping = false
                 resultLabel.text = calculator.result
                 operatorExists = false
-                
             }
-            
         }
-        evaluateScroller()
         numberExists = false
     }
     
