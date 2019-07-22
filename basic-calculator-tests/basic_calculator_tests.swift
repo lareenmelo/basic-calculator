@@ -8,10 +8,13 @@
 
 import XCTest
 
+
 class basic_calculator_tests: XCTestCase {
+    private var calculator: Calculator!
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        calculator = Calculator()
     }
 
     override func tearDown() {

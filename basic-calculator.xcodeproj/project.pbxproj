@@ -14,6 +14,10 @@
 		57013E9A22A5F28F007F21F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57013E9822A5F28F007F21F8 /* LaunchScreen.storyboard */; };
 		57013EA522A61AFC007F21F8 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57013EA422A61AFC007F21F8 /* Calculator.swift */; };
 		57421B7422E4133500A459D3 /* basic_calculator_tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57421B7322E4133500A459D3 /* basic_calculator_tests.swift */; };
+		57DF919122E6771D00C8AD0B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57013E9122A5F28F007F21F8 /* ViewController.swift */; };
+		57DF919222E6774200C8AD0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57013E8F22A5F28F007F21F8 /* AppDelegate.swift */; };
+		57DF919322E6774600C8AD0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57013E9322A5F28F007F21F8 /* Main.storyboard */; };
+		57DF919422E6774B00C8AD0B /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57013EA422A61AFC007F21F8 /* Calculator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -198,6 +202,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57DF919322E6774600C8AD0B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,6 +223,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57DF919222E6774200C8AD0B /* AppDelegate.swift in Sources */,
+				57DF919422E6774B00C8AD0B /* Calculator.swift in Sources */,
+				57DF919122E6771D00C8AD0B /* ViewController.swift in Sources */,
 				57421B7422E4133500A459D3 /* basic_calculator_tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
