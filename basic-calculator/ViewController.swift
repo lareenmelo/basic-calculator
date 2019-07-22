@@ -63,7 +63,7 @@ class ViewController: UIViewController {
         if finishedCalculating {
             operationsTracker.text = calculator.result
             finishedCalculating.toggle()
-
+            
         }
         
         if isTyping {
@@ -100,7 +100,7 @@ class ViewController: UIViewController {
                 
                 isTyping = false
                 resultLabel.text = calculator.result
-
+                
             } else if operation.text == "+/-" {
                 negativeNumberEvaluator = true
                 if numberExists {
@@ -115,11 +115,11 @@ class ViewController: UIViewController {
                     }
                     
                     number = calculator.result
-
+                    
                 } else {
                     print("You have to type a number first to perform this operation.")
                 }
-
+                
             } else {
                 
                 negativeNumberEvaluator.toggle()
@@ -168,7 +168,7 @@ class ViewController: UIViewController {
             number += buttonContent.text!
         }
         evaluateScroller()
-
+        
     }
     
     @IBAction func clear(_ sender: Any) {
@@ -187,7 +187,7 @@ class ViewController: UIViewController {
                 operationsTracker.text = String((operationsTracker.text?.dropLast(3))!)
                 
             }
-
+            
             if operationsTracker.text == "" {
                 if !isClearAll {
                     isClearAll.toggle()
