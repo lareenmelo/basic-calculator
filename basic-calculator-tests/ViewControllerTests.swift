@@ -1,35 +1,18 @@
 //
-//  basic_calculator_tests.swift
+//  ViewControllerTests.swift
 //  basic-calculator-tests
 //
-//  Created by Lareen Melo on 7/20/19.
+//  Created by Admin on 7/24/19.
 //  Copyright © 2019 Lareen Melo. All rights reserved.
 //
 
 import XCTest
 
-// SEGMENT THE TEST CASES PER CLASS / FUNCTIONALITY
-
-class basic_calculator_tests: XCTestCase {
-    private var calculator: Calculator!
+class ViewControllerTests: XCTestCase {
 
     override func setUp() {
-        super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
-        calculator = Calculator()
     }
-    
-    /* TO TEST
- 
-     CALCULATOR
-    - performOperation
-    - evaluateWholesomeness
-    - completeBinaryOperation
-     -
-     -
-     -
-     -
-     */
 
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
