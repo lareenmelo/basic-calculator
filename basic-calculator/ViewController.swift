@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     var calculator = Calculator()
     
     var number = ""
-    var isTyping = false
+    var isTyping = false	
     var numberExists = false
     var operatorExists = false
     var finishedCalculating = false
