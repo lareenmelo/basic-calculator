@@ -26,10 +26,27 @@ class ViewControllerTests: XCTestCase {
     
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
+        viewController.clear("AC")
     }
     
-    
-    func testTest() {
-        XCTAssertEqual(viewController.operationsTracker.text, "")
+    func testResultLabel() {
+        // TODO: testResultLabel()
+        viewController.number = "56"
+        
+        viewController.performOperation("+")
+//        sut.loginButton.sendActions(for: .touchUpInside)
+
+
+        XCTAssert(viewController.resultLabel.text == "56")
     }
+    
+    func testOperationsTracker() {
+        // TODO: testOperationsTracker()
+    }
+    
+    func testUndo() {
+        // TODO: testUndo()
+
+    }
+    
 }
