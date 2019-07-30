@@ -11,6 +11,8 @@ import XCTest
 class ViewControllerTests: XCTestCase {
     
     var viewController: ViewController!
+    let button: UIButton = UIButton()
+
     
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -22,18 +24,27 @@ class ViewControllerTests: XCTestCase {
         
         viewController.loadView()
         
+        
+        button.setTitle("+", for: .normal)
+        button.addTarget(self, action: #selector(viewController.performOperation(_:)), for: .touchUpInside)
+
+        
     }
     
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
-        viewController.clear("AC")
+//        viewController.clear("AC")
     }
     
     func testResultLabel() {
         // TODO: testResultLabel()
         viewController.number = "56"
+        print(button.titleLabel)
+        //testing
         
-        viewController.performOperation("+")
+        
+        button.sendActions(for: .touchUpInside)
+//        viewController.performOperation("+")
 //        sut.loginButton.sendActions(for: .touchUpInside)
 
 
