@@ -18,7 +18,6 @@
 		57DF919322E6774600C8AD0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57013E9322A5F28F007F21F8 /* Main.storyboard */; };
 		57DF919422E6774B00C8AD0B /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57013EA422A61AFC007F21F8 /* Calculator.swift */; };
 		849051A922E8E76D00DE7797 /* CalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849051A822E8E76D00DE7797 /* CalculatorTests.swift */; };
-		849051AB22E8E78800DE7797 /* ViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849051AA22E8E78800DE7797 /* ViewControllerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +42,6 @@
 		57421B7122E4133500A459D3 /* basic-calculator-tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "basic-calculator-tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		57421B7522E4133500A459D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		849051A822E8E76D00DE7797 /* CalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorTests.swift; sourceTree = "<group>"; };
-		849051AA22E8E78800DE7797 /* ViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,7 +107,6 @@
 			children = (
 				57421B7522E4133500A459D3 /* Info.plist */,
 				849051A822E8E76D00DE7797 /* CalculatorTests.swift */,
-				849051AA22E8E78800DE7797 /* ViewControllerTests.swift */,
 			);
 			path = "basic-calculator-tests";
 			sourceTree = "<group>";
@@ -226,7 +223,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				849051AB22E8E78800DE7797 /* ViewControllerTests.swift in Sources */,
 				57DF919222E6774200C8AD0B /* AppDelegate.swift in Sources */,
 				57DF919422E6774B00C8AD0B /* Calculator.swift in Sources */,
 				849051A922E8E76D00DE7797 /* CalculatorTests.swift in Sources */,

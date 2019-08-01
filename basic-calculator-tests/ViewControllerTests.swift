@@ -39,7 +39,6 @@ class ViewControllerTests: XCTestCase {
     func testResultLabel() {
         // TODO: testResultLabel()
         viewController.number = "56"
-        print(button.titleLabel)
         //testing
         
         
