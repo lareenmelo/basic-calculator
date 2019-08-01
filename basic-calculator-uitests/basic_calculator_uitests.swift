@@ -30,22 +30,43 @@ class basic_calculator_uitests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
     
-    func calculation() {
+    func testCalculation() {
+        
         let firstNumberButton = app.buttons["2"]
+        let operationButton = app.buttons["+"]
         let secondNumberButton = app.buttons["8"]
+        let secondOperationButton = app.buttons["="]
+
         
         XCTAssert(firstNumberButton.exists)
+        XCTAssert(operationButton.exists)
         XCTAssert(secondNumberButton.exists)
+        XCTAssert(secondOperationButton.exists)
+
+        firstNumberButton.tap()
+        operationButton.tap()
+        secondNumberButton.tap()
+        secondOperationButton.tap()
+
         
+        let label = app.staticTexts["2 + 8"]
+        let resultLabel = app.staticTexts["10"]
+        
+        XCTAssert(label.exists)
+        XCTAssert(resultLabel.exists)
         
     }
-    
+
     func undo() {
-        
+        let clearAllButton = app.buttons["C"]
+        XCTAssert(clearAllButton.exists)
+
     }
-    
+
     func clearAll() {
-        
+        let clearAllButton = app.buttons["AC"]
+        XCTAssert(clearAllButton.exists)
+
     }
 
 }
