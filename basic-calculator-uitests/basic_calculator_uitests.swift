@@ -57,15 +57,88 @@ class basic_calculator_uitests: XCTestCase {
         
     }
 
-    func undo() {
-        let clearAllButton = app.buttons["C"]
-        XCTAssert(clearAllButton.exists)
+    func testUndo() {
+        
+        let firstNumberButton = app.buttons["2"]
+        let operationButton = app.buttons["+"]
+        let secondNumberButton = app.buttons["8"]
+        let secondOperationButton = app.buttons["="]
+        let thirdNumberButton = app.buttons["3"]
+        let undoButton = app.buttons["C"]
+        
+        XCTAssert(firstNumberButton.exists)
+        XCTAssert(operationButton.exists)
+        XCTAssert(secondNumberButton.exists)
+        XCTAssert(secondOperationButton.exists)
+        XCTAssert(thirdNumberButton.exists)
+        XCTAssertFalse(undoButton.exists)
 
+        firstNumberButton.tap()
+        XCTAssert(undoButton.exists)
+        operationButton.tap()
+        secondNumberButton.tap()
+        
+        var label = app.staticTexts["2 + 8"]
+        XCTAssert(label.exists)
+
+        undoButton.tap()
+        thirdNumberButton.tap()
+        
+        label = app.staticTexts["2 + 3"]
+        XCTAssert(label.exists)
+
+        secondOperationButton.tap()
+        
+        let resultLabel = app.staticTexts["5"]
+        
+        XCTAssert(resultLabel.exists)
     }
 
-    func clearAll() {
+    func testClearAll() {
+        let firstNumberButton = app.buttons["2"]
+        let operationButton = app.buttons["+"]
+        let secondNumberButton = app.buttons["8"]
+        let secondOperationButton = app.buttons["="]
+        let thirdNumberButton = app.buttons["3"]
+        let thirdOperationButton = app.buttons["-"]
         let clearAllButton = app.buttons["AC"]
+
         XCTAssert(clearAllButton.exists)
+        XCTAssert(firstNumberButton.exists)
+        XCTAssert(operationButton.exists)
+        XCTAssert(secondNumberButton.exists)
+        XCTAssert(thirdNumberButton.exists)
+        XCTAssert(thirdOperationButton.exists)
+        XCTAssert(secondOperationButton.exists)
+
+        firstNumberButton.tap()
+        
+        XCTAssertFalse(clearAllButton.exists)
+
+        operationButton.tap()
+        secondNumberButton.tap()
+        secondOperationButton.tap()
+        
+        XCTAssert(clearAllButton.exists)
+
+        var label = app.staticTexts["2 + 8"]
+        var resultLabel = app.staticTexts["10"]
+        
+        XCTAssert(label.exists)
+        XCTAssert(resultLabel.exists)
+        
+        clearAllButton.tap()
+        
+        firstNumberButton.tap()
+        thirdOperationButton.tap()
+        thirdNumberButton.tap()
+        secondOperationButton.tap()
+        
+        label = app.staticTexts["2 - 3"]
+        resultLabel = app.staticTexts["-1"]
+        
+        XCTAssert(label.exists)
+        XCTAssert(resultLabel.exists)
 
     }
 
