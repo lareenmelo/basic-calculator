@@ -13,6 +13,7 @@
 		57013E9722A5F28F007F21F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57013E9622A5F28F007F21F8 /* Assets.xcassets */; };
 		57013E9A22A5F28F007F21F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57013E9822A5F28F007F21F8 /* LaunchScreen.storyboard */; };
 		57013EA522A61AFC007F21F8 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57013EA422A61AFC007F21F8 /* Calculator.swift */; };
+		575A5F4E22F53CFA00AC83C1 /* RoundButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575A5F4D22F53CFA00AC83C1 /* RoundButtons.swift */; };
 		57A71A2122F51F7D00F44F11 /* SF-Pro-Display-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 57A71A2022F51F7D00F44F11 /* SF-Pro-Display-Medium.otf */; };
 		57A71A2322F520D700F44F11 /* SF-Pro-Display-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 57A71A2222F520D700F44F11 /* SF-Pro-Display-Heavy.otf */; };
 		57A71A2522F520F100F44F11 /* SF-Compact-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 57A71A2422F520F100F44F11 /* SF-Compact-Text-Regular.otf */; };
@@ -50,6 +51,7 @@
 		57013EA422A61AFC007F21F8 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		57421B7122E4133500A459D3 /* basic-calculator-tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "basic-calculator-tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		57421B7522E4133500A459D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		575A5F4D22F53CFA00AC83C1 /* RoundButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButtons.swift; sourceTree = "<group>"; };
 		57A71A2022F51F7D00F44F11 /* SF-Pro-Display-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-Medium.otf"; path = "../../../../../../Library/Fonts/SF-Pro-Display-Medium.otf"; sourceTree = "<group>"; };
 		57A71A2222F520D700F44F11 /* SF-Pro-Display-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-Heavy.otf"; path = "../../../../../../Library/Fonts/SF-Pro-Display-Heavy.otf"; sourceTree = "<group>"; };
 		57A71A2422F520F100F44F11 /* SF-Compact-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Compact-Text-Regular.otf"; path = "../../../../../../Library/Fonts/SF-Compact-Text-Regular.otf"; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				57013E9622A5F28F007F21F8 /* Assets.xcassets */,
 				57013E9822A5F28F007F21F8 /* LaunchScreen.storyboard */,
 				57013E9B22A5F28F007F21F8 /* Info.plist */,
+				575A5F4D22F53CFA00AC83C1 /* RoundButtons.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				575A5F4E22F53CFA00AC83C1 /* RoundButtons.swift in Sources */,
 				57013E9222A5F28F007F21F8 /* ViewController.swift in Sources */,
 				57013E9022A5F28F007F21F8 /* AppDelegate.swift in Sources */,
 				57013EA522A61AFC007F21F8 /* Calculator.swift in Sources */,
