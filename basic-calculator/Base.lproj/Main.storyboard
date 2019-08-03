@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -26,20 +26,20 @@
             <objects>
                 <viewController storyboardIdentifier="ViewController" automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ViewController" customModule="basic_calculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a8b-F9-aLi" userLabel="Labels Container">
-                                <rect key="frame" x="0.0" y="54" width="414" height="224"/>
+                                <rect key="frame" x="0.0" y="30" width="320" height="142"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="tms-9u-Yvb" userLabel="Scrollable Label">
-                                        <rect key="frame" x="14" y="0.0" width="386" height="78.5"/>
+                                        <rect key="frame" x="14" y="0.0" width="292" height="49.5"/>
                                         <subviews>
                                             <scrollView autoresizesSubviews="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GB3-Hh-eXI">
-                                                <rect key="frame" x="0.0" y="0.0" width="386" height="78.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="292" height="49.5"/>
                                                 <subviews>
                                                     <label autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" semanticContentAttribute="forceLeftToRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MH3-DW-0rX">
-                                                        <rect key="frame" x="0.0" y="0.0" width="8" height="78.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="8" height="49.5"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="8" id="J5g-rB-4lw"/>
                                                         </constraints>
@@ -60,7 +60,7 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="8Tm-lf-cJw">
-                                        <rect key="frame" x="14" y="78.5" width="386" height="140.5"/>
+                                        <rect key="frame" x="14" y="49.5" width="292" height="87.5"/>
                                         <fontDescription key="fontDescription" name="SFProDisplay-Heavy" family="SF Pro Display" pointSize="50"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -78,14 +78,14 @@
                                 </constraints>
                                 <viewLayoutGuide key="safeArea" id="qpx-Lk-Ciq"/>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="8e6-fs-Prt" userLabel="Number Pad">
-                                <rect key="frame" x="15" y="278" width="384" height="582.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="8e6-fs-Prt" userLabel="Number Pad">
+                                <rect key="frame" x="15" y="172" width="290" height="369"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="mWt-G7-Im6" userLabel="First Stack View">
-                                        <rect key="frame" x="0.0" y="0.0" width="384" height="110"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="mWt-G7-Im6" userLabel="First Stack View">
+                                        <rect key="frame" x="0.0" y="0.0" width="290" height="61"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eY8-PN-pm5" customClass="RoundButton" customModule="basic_calculator" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="90" height="110"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="63.5" height="61"/>
                                                 <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="20"/>
                                                 <state key="normal" title="AC">
@@ -104,7 +104,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5fc-XP-YID" customClass="RoundButton" customModule="basic_calculator" customModuleProvider="target">
-                                                <rect key="frame" x="98" y="0.0" width="90" height="110"/>
+                                                <rect key="frame" x="75.5" y="0.0" width="63.5" height="61"/>
                                                 <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="20"/>
                                                 <state key="normal" title="+/-">
@@ -120,7 +120,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hdx-au-qFf" customClass="RoundButton" customModule="basic_calculator" customModuleProvider="target">
-                                                <rect key="frame" x="196" y="0.0" width="90" height="110"/>
+                                                <rect key="frame" x="151" y="0.0" width="63.5" height="61"/>
                                                 <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="20"/>
                                                 <state key="normal" title="%">
@@ -136,7 +136,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l6c-Md-OQn" userLabel="÷" customClass="RoundButton" customModule="basic_calculator" customModuleProvider="target">
-                                                <rect key="frame" x="294" y="0.0" width="90" height="110"/>
+                                                <rect key="frame" x="226.5" y="0.0" width="63.5" height="61"/>
                                                 <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="20"/>
                                                 <state key="normal" title="÷">
@@ -153,11 +153,11 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Wi9-1Q-a34" userLabel="Second Stack View">
-                                        <rect key="frame" x="0.0" y="118" width="384" height="110"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Wi9-1Q-a34" userLabel="Second Stack View">
+                                        <rect key="frame" x="0.0" y="77" width="290" height="61"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lpv-z6-zmF" customClass="RoundButton" customModule="basic_calculator" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="90" height="110"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="63.5" height="61"/>
                                                 <color key="backgroundColor" red="0.14509803921568626" green="0.14509803921568626" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="20"/>
                                                 <state key="normal" title="7">
@@ -173,7 +173,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bxI-HG-3CP" customClass="RoundButton" customModule="basic_calculator" customModuleProvider="target">
-                                                <rect key="frame" x="98" y="0.0" width="90" height="110"/>
+                                                <rect key="frame" x="75.5" y="0.0" width="63.5" height="61"/>
                                                 <color key="backgroundColor" red="0.14509803921568626" green="0.14509803921568626" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="20"/>
                                                 <state key="normal" title="8">
@@ -189,7 +189,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xjJ-4f-IU1" customClass="RoundButton" customModule="basic_calculator" customModuleProvider="target">
-                                                <rect key="frame" x="196" y="0.0" width="90" height="110"/>
+                                                <rect key="frame" x="151" y="0.0" width="63.5" height="61"/>
                                                 <color key="backgroundColor" red="0.14509803921568626" green="0.14509803921568626" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="20"/>
                                                 <state key="normal" title="9">
@@ -205,7 +205,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1UX-J3-Yl8" customClass="RoundButton" customModule="basic_calculator" customModuleProvider="target">
-                                                <rect key="frame" x="294" y="0.0" width="90" height="110"/>
+                                                <rect key="frame" x="226.5" y="0.0" width="63.5" height="61"/>
                                                 <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="20"/>
                                                 <state key="normal" title="x">
@@ -222,11 +222,11 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="3hR-cg-yR8" userLabel="Third Stack View">
-                                        <rect key="frame" x="0.0" y="236" width="384" height="110"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="3hR-cg-yR8" userLabel="Third Stack View">
+                                        <rect key="frame" x="0.0" y="154" width="290" height="61"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gtr-0c-sM3" customClass="RoundButton" customModule="basic_calculator" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="90" height="110"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="63.5" height="61"/>
                                                 <color key="backgroundColor" red="0.14509803921568626" green="0.14509803921568626" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="20"/>
                                                 <state key="normal" title="4">
@@ -242,7 +242,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rXn-FT-UUn" customClass="RoundButton" customModule="basic_calculator" customModuleProvider="target">
-                                                <rect key="frame" x="98" y="0.0" width="90" height="110"/>
+                                                <rect key="frame" x="75.5" y="0.0" width="63.5" height="61"/>
                                                 <color key="backgroundColor" red="0.14509803921568626" green="0.14509803921568626" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="20"/>
                                                 <state key="normal" title="5">
@@ -258,7 +258,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6te-2j-CnT" customClass="RoundButton" customModule="basic_calculator" customModuleProvider="target">
-                                                <rect key="frame" x="196" y="0.0" width="90" height="110"/>
+                                                <rect key="frame" x="151" y="0.0" width="63.5" height="61"/>
                                                 <color key="backgroundColor" red="0.14509803921568626" green="0.14509803921568626" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="20"/>
                                                 <state key="normal" title="6">
@@ -274,7 +274,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FeC-R1-hrU" customClass="RoundButton" customModule="basic_calculator" customModuleProvider="target">
-                                                <rect key="frame" x="294" y="0.0" width="90" height="110"/>
+                                                <rect key="frame" x="226.5" y="0.0" width="63.5" height="61"/>
                                                 <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="20"/>
                                                 <state key="normal" title="-">
@@ -291,11 +291,11 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="s47-bS-FhW" userLabel="Fourth Stack View">
-                                        <rect key="frame" x="0.0" y="354" width="384" height="110.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="s47-bS-FhW" userLabel="Fourth Stack View">
+                                        <rect key="frame" x="0.0" y="231" width="290" height="61"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zg9-P3-gYP" customClass="RoundButton" customModule="basic_calculator" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="90" height="110.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="63.5" height="61"/>
                                                 <color key="backgroundColor" red="0.1450980392" green="0.1450980392" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="20"/>
                                                 <state key="normal" title="1">
@@ -311,7 +311,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SdG-6n-wne" customClass="RoundButton" customModule="basic_calculator" customModuleProvider="target">
-                                                <rect key="frame" x="98" y="0.0" width="90" height="110.5"/>
+                                                <rect key="frame" x="75.5" y="0.0" width="63.5" height="61"/>
                                                 <color key="backgroundColor" red="0.1450980392" green="0.1450980392" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="20"/>
                                                 <state key="normal" title="2">
@@ -327,7 +327,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qdh-fh-ch2" customClass="RoundButton" customModule="basic_calculator" customModuleProvider="target">
-                                                <rect key="frame" x="196" y="0.0" width="90" height="110.5"/>
+                                                <rect key="frame" x="151" y="0.0" width="63.5" height="61"/>
                                                 <color key="backgroundColor" red="0.1450980392" green="0.1450980392" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="20"/>
                                                 <state key="normal" title="3">
@@ -343,7 +343,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M7G-Ju-tzy" customClass="RoundButton" customModule="basic_calculator" customModuleProvider="target">
-                                                <rect key="frame" x="294" y="0.0" width="90" height="110.5"/>
+                                                <rect key="frame" x="226.5" y="0.0" width="63.5" height="61"/>
                                                 <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="20"/>
                                                 <state key="normal" title="+">
@@ -360,11 +360,11 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="xUz-yf-tvA" userLabel="Fifth Stack View">
-                                        <rect key="frame" x="0.0" y="472.5" width="384" height="110"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="xUz-yf-tvA" userLabel="Fifth Stack View">
+                                        <rect key="frame" x="0.0" y="308" width="290" height="61"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SZD-i1-HVF" customClass="RoundButton" customModule="basic_calculator" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="188" height="110"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="139" height="61"/>
                                                 <color key="backgroundColor" red="0.1450980392" green="0.1450980392" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="20"/>
                                                 <state key="normal" title="0">
@@ -379,11 +379,11 @@
                                                     <action selector="touchDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="azu-wz-Xrd"/>
                                                 </connections>
                                             </button>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="v4U-SC-f3P">
-                                                <rect key="frame" x="196" y="0.0" width="188" height="110"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="v4U-SC-f3P">
+                                                <rect key="frame" x="151" y="0.0" width="139" height="61"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MYz-3B-a4U" customClass="RoundButton" customModule="basic_calculator" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="90" height="110"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="63.5" height="61"/>
                                                         <color key="backgroundColor" red="0.1450980392" green="0.1450980392" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="20"/>
                                                         <state key="normal" title=".">
@@ -399,7 +399,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ARp-tV-kVH" customClass="RoundButton" customModule="basic_calculator" customModuleProvider="target">
-                                                        <rect key="frame" x="98" y="0.0" width="90" height="110"/>
+                                                        <rect key="frame" x="75.5" y="0.0" width="63.5" height="61"/>
                                                         <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="SFProDisplay-Medium" family="SF Pro Display" pointSize="20"/>
                                                         <state key="normal" title="=">
