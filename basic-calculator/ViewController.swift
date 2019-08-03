@@ -39,6 +39,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         // Do any additional setup after loading the view.
         super.viewDidLoad()
+//        resultLabel.alig
         operationsTracker.sizeToFit()
         
     }

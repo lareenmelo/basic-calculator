@@ -59,6 +59,18 @@ class basic_calculator_uitests: XCTestCase {
 
     func testUndo() {
         
+        let app = XCUIApplication()
+        app.buttons["2"].tap()
+        app.buttons["+"].tap()
+        app.buttons["8"].tap()
+        
+        let cButton = app.buttons["C"]
+        cButton.tap()
+        app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element(boundBy: 1).children(matching: .other).element(boundBy: 0).tap()
+        cButton.tap()
+        app.buttons["AC"].tap()
+        app.buttons["="].tap()
+        
         let firstNumberButton = app.buttons["2"]
         let operationButton = app.buttons["+"]
         let secondNumberButton = app.buttons["8"]
