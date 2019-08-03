@@ -43,6 +43,10 @@ class ViewController: UIViewController {
         
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     func evaluateScroller() {
         operationsScroller.isScrollEnabled = operationsTracker.frame.size.width + 30 >= operationsScroller.frame.size.width
         
