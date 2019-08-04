@@ -14,6 +14,9 @@
 		57013E9A22A5F28F007F21F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57013E9822A5F28F007F21F8 /* LaunchScreen.storyboard */; };
 		57013EA522A61AFC007F21F8 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57013EA422A61AFC007F21F8 /* Calculator.swift */; };
 		575A5F4E22F53CFA00AC83C1 /* RoundButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575A5F4D22F53CFA00AC83C1 /* RoundButtons.swift */; };
+		57B7D91122F6748000852399 /* SF-Compact-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 57B7D90F22F6735D00852399 /* SF-Compact-Text-Regular.otf */; };
+		57B7D91222F6748000852399 /* SF-Pro-Display-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 57B7D90E22F6735D00852399 /* SF-Pro-Display-Heavy.otf */; };
+		57B7D91322F6748000852399 /* SF-Pro-Display-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 57B7D90D22F6735C00852399 /* SF-Pro-Display-Medium.otf */; };
 		57D5563F22F263A400127435 /* basic_calculator_uitests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D5563E22F263A400127435 /* basic_calculator_uitests.swift */; };
 		57D5564622F263B800127435 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57013E9322A5F28F007F21F8 /* Main.storyboard */; };
 		57D5564E22F270A800127435 /* CalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849051A822E8E76D00DE7797 /* CalculatorTests.swift */; };
@@ -259,6 +262,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57B7D91322F6748000852399 /* SF-Pro-Display-Medium.otf in Resources */,
+				57B7D91122F6748000852399 /* SF-Compact-Text-Regular.otf in Resources */,
+				57B7D91222F6748000852399 /* SF-Pro-Display-Heavy.otf in Resources */,
 				57013E9A22A5F28F007F21F8 /* LaunchScreen.storyboard in Resources */,
 				57013E9722A5F28F007F21F8 /* Assets.xcassets in Resources */,
 				57013E9522A5F28F007F21F8 /* Main.storyboard in Resources */,
