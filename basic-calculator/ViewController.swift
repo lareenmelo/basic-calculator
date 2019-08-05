@@ -182,7 +182,13 @@ class ViewController: UIViewController {
         
         if buttonContent.text == "C" {
             if isTyping {
-                operationsTracker.text = operationsTracker.text?.delete()
+                if operationsTracker.text?.delete() == "" {
+                    operationsTracker.text = ""
+                    
+                } else {
+                    operationsTracker.text = operationsTracker.text?.delete()
+                    
+                }
                 number = "0"
                 
             } else {
@@ -229,9 +235,13 @@ extension String {
             offset += 1
         }
         
-        let index = sequence.index(sequence.startIndex, offsetBy: lastWhitespaceIndex)
-        
-        let newString = String(sequence[...index])
-        return newString
+        if lastWhitespaceIndex == 0 {
+            return ""
+        } else {
+            let index = sequence.index(sequence.startIndex, offsetBy: lastWhitespaceIndex)
+            
+            let newString = String(sequence[...index])
+            return newString
+        }
     }
 }
