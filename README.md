@@ -11,7 +11,7 @@ The main purpose of the project was to create a calculator that support the foll
 - Division 
 - Mod
 
-Since it's my first iOS app, there are many things to fix, so I will come back in three months to refactor and hopefully I can see significant change in my programming skills.
+Since it's my first iOS app, there are many things to fix, so I will come back in three months (lol, some time in 2020) to refactor and hopefully I can see significant change in my programming skills.
 
 
 ## Screenshots
