@@ -15,7 +15,7 @@ Since it's my first iOS app, there are many things to fix, so I will come back i
 
 
 ## Screenshots
-### Portraid Mode
+### Portrait Mode
 <img src="basic-calculator-portrait.png">
 
 ### Landscape Mode
